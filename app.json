@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/page2/page2"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#0094ff",
+        "navigationBarTitleText": "回收",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh":true 
+    },
+    "tabBar": {
+        "list":[
+            {
+                "pagePath": "pages/index/index",
+                "text": "主页",
+                "iconPath": "/icon/t1.png",
+                "selectedIconPath": "icon/t2.png"
+            },
+             {
+                "pagePath": "pages/page2/page2",
+                "text": "回收",
+                "iconPath": "/resources/main/t3.png",
+                "selectedIconPath": "/resources/main/t4.png"
+             }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

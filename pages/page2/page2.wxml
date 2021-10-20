@@ -1,0 +1,6 @@
+<!--pages/page2/page2.wxml-->
+<!-- <text>pages/page2/page2.wxml</text> -->
+<view class="usermotto">
+    <!-- <text class="user-motto">{{hello}}</text> -->
+    <button bindtap="request1">下单</button>
+  </view>

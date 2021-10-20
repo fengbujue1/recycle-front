@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#0055ff",
+  "navigationBarTitleText": "回收下单",
+  "enablePullDownRefresh": false
+}
