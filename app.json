@@ -2,7 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/page2/page2"
+        "pages/page2/page2",
+        "pages/my/my",
+        "pages/order/order"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -16,15 +18,23 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "主页",
-                "iconPath": "/icon/t1.png",
-                "selectedIconPath": "icon/t2.png"
+                "iconPath": "/resources/main/tabbar/home_no_select.png",
+                "selectedIconPath": "/resources/main/tabbar/home_select.png"
             },
+            {
+                "pagePath": "pages/order/order",
+                "text": "订单",
+                "iconPath": "/resources/main/tabbar/order_no_select.png",
+                "selectedIconPath": "/resources/main/tabbar/my_select.png"
+             },
+
              {
-                "pagePath": "pages/page2/page2",
-                "text": "回收",
-                "iconPath": "/resources/main/t3.png",
-                "selectedIconPath": "/resources/main/t4.png"
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "/resources/main/tabbar/order_no_select.png",
+                "selectedIconPath": "/resources/main/tabbar/my_select.png"
              }
+            
         ]
     },
     "style": "v2",
