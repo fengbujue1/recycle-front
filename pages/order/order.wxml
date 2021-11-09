@@ -1,2 +1,16 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"></Tabs>
+<view>
+    <view wx:if="{{ordersByType.length===0}}">暂无数据</view>
+    <view wx:else>
+        <view wx:for="{{ordersByType}}"  wx:for-item="itm" wx:for-index="idx" >
+        <view>{{idx}}----
+            <view wx:for="{{itm}}"  wx:for-item="val" wx:for-index="key">
+                key------{{key}}
+                val------{{val}}
+            </view>
+        </view>
+        </view>
+    </view>
+    
+</view>
