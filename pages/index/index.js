@@ -19,7 +19,7 @@ Page({
   },
   skip:function(){
     wx.navigateTo({
-      url: '/pages/page2/page2',
+      url: '/pages/submit/submit',
     })
   },
   // 事件处理函数

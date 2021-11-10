@@ -4,7 +4,8 @@
         "pages/logs/logs",
         "pages/page2/page2",
         "pages/my/my",
-        "pages/order/order"
+        "pages/order/order",
+        "pages/submit/submit"
     ],
     "window": {
         "backgroundTextStyle": "dark",

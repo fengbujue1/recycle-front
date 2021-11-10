@@ -3,13 +3,19 @@
 <view>
     <view wx:if="{{ordersByType.length===0}}">暂无数据</view>
     <view wx:else>
-        <view wx:for="{{ordersByType}}"  wx:for-item="itm" wx:for-index="idx" >
-        <view>{{idx}}----
-            <view wx:for="{{itm}}"  wx:for-item="val" wx:for-index="key">
+        <view wx:for="{{ordersByType}}"  wx:for-item="itm" wx:for-index="idx" class="order_item">
+         <!-- 复选框 -->
+            <view class="cart_chk_wrap">
+                <checkbox-group data-id="{{item.goods_id}}" bindchange="handeItemChange">
+                <checkbox checked="{{item.checked}}"></checkbox>
+                </checkbox-group>
+            </view>
+            <view class="recycle_type">回收类型{{itm.recycleType}}</view>
+            <view class="recycle_time">下单时间：{{itm.time}}</view>
+            <!-- <view wx:for="{{itm}}"  wx:for-item="val" wx:for-index="key">
                 key------{{key}}
                 val------{{val}}
-            </view>
-        </view>
+            </view> -->
         </view>
     </view>
     

@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        hello:"hello"
+
     },
 
     /**
@@ -14,21 +14,6 @@ Page({
     onLoad: function (options) {
 
     },
-    request1:function(){
-        wx.request({
-          method:"PUT",
-          dataType:"json",
-          url: 'http://localhost:8080/recycle/recycle/submit',
-          data:{"addressId":3,"items":[{"heightRange":1,"heightRangeEnum":"RANGE1","recycleKind":1}],"recycleType":1,"remark":"asdasdasdad","status":1,"time":1634369408505,"userId":1},
-          success (res) {
-            console.log(res.data)
-          },
-          fail (res) {
-            console.log(res.data)
-          }
-        })
-        
-      },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

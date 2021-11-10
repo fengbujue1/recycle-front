@@ -1,4 +1,4 @@
-// pages/order/order.js
+// pages/submit/submit.js
 Page({
 
     /**
@@ -8,33 +8,35 @@ Page({
         tabs: [
             {
               id: 0,
-              value: "未接单",
+              value: "废纸",
               isActive: true
             },
             {
               id: 1,
-              value: "已接单",
+              value: "塑料",
               isActive: false
             },
             {
               id: 2,
-              value: "已完成",
+              value: "金属",
               isActive: false
             },
             {
               id: 3,
-              value: "已取消",
+              value: "服饰",
               isActive: false
-            }
+            },
+            {
+                id: 4,
+                value: "家电",
+                isActive: false
+              }
           ],
-          ordersByType:[]
     },
-
-    // 顶部tab标签，点击出现切换
-    handleTabsItemChange(e) {
+     // 顶部tab标签，点击出现切换
+     handleTabsItemChange(e) {
         // 1 获取被点击的标题索引
         const index  = e.detail.index;
-        this.getOrdersByStatus(index+1)
         // 2 修改源数组
         let  tabs  = this.data.tabs;
         tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
@@ -43,11 +45,28 @@ Page({
           tabs:tabs
         })
       },
+    request1:function(){
+        wx.request({
+          method:"PUT",
+          dataType:"json",
+          url: 'http://localhost:8080/recycle/recycle/submit',
+          data:{"addressId":3,"items":[{"heightRange":1,"heightRangeEnum":"RANGE1","recycleKind":1}],"recycleType":1,"remark":"asdasdasdad","status":1,"time":1634369408505,"userId":1},
+          success (res) {
+            console.log(res.data)
+          },
+          fail (res) {
+            console.log(res.data)
+          }
+        })
+        
+      },
+
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-       
+
     },
 
     /**
@@ -61,38 +80,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.getOrdersByStatus(1)
-        
+
     },
- // 指定状态的订单数据
- getOrdersByStatus:function(statusPam){
-    var ordersByTyp= [];
-    wx.request({
-        method:"GET",
-        dataType:"json",
-        url: 'http://localhost:8080/recycle/recycle/query?userId=1&status=1',
-        data:{"userId":1,"status":statusPam},
-        success: (res) => {
-          //接收订单数据
-          const orders=res.data;
-          for (var i=0;i<orders.length;i++){ 
-            ordersByTyp[i]=orders[i];
-          };
-          this.setData({
-            ordersByType:ordersByTyp
-          });
-          console.log(this.data.ordersByType)
-        },
-        fail (res) {
-          console.log(res.data)
-        }
-      })   
-  },
+
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-    
+
     },
 
     /**

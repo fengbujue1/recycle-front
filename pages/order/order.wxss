@@ -1,1 +1,39 @@
-/* pages/order/order.wxss */
+.order_item {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(250, 248, 244);
+    /* 设置边框线条粗细 */
+    border:1px solid;
+    /* 设置边框圆角 */
+    border-radius:8px;
+    margin:10px
+  }
+.cart_chk_wrap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .recycle_type {
+    flex: 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .recycle_remark {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .recycle_time {
+    flex: 4;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }

@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Tabs":"../../components/Tabs/Tabs"
+  },
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#0055ff",
   "navigationBarTitleText": "回收下单",
