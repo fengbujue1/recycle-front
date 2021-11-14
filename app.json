@@ -2,10 +2,11 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/page2/page2",
         "pages/my/my",
         "pages/order/order",
-        "pages/submit/submit"
+        "pages/submit/submit",
+        "pages/address/address",
+        "pages/addAddress/addAddress"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -38,7 +39,6 @@
             
         ]
     },
-    "style": "v2",
     "sitemapLocation": "sitemap.json",
     
     "networkTimeout": {

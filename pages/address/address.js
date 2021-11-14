@@ -1,4 +1,4 @@
-// pages/page2/page2.js
+// pages/address/address.js
 Page({
 
     /**
@@ -6,6 +6,23 @@ Page({
      */
     data: {
 
+    },
+
+    // 查询个人地址信息
+    getOrdersByStatus:function(peson_id){
+        var ordersByTyp= [];
+        wx.request({
+            method:"GET",
+            dataType:"json",
+            url: 'http://localhost:8080/recycle/address/query',
+            data:{"userId":peson_id},
+            success: (res) => {
+            console.log(res.data)
+            },
+            fail (res) {
+            console.log(res.data)
+            }
+        })   
     },
 
     /**

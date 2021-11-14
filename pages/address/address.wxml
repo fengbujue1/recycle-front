@@ -1,0 +1,3 @@
+<!--pages/address/address.wxml-->
+<button class="add_new_address">新增地址</button>
+ 

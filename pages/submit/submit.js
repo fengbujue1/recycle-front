@@ -32,7 +32,74 @@ Page({
                 isActive: false
               }
           ],
+          icon_jia_jian:[
+            {
+              // 统纸
+              id: 0,
+              value: "MIXTURE_PAPE",
+              isPlusActive: true,
+              isMinusActive: false
+            },
+            {
+              // 纯黄纸
+              id: 1,
+              value: "YELLOW_PAPE",
+              isPlusActive: true,
+              isMinusActive: false
+            },
+            {
+              // 纯花纸
+              id: 2,
+              value: "FLOWER_PAPE",
+              isPlusActive: true,
+              isMinusActive: false
+            },
+            {
+              // 杂纸
+              id: 3,
+              value: "OTHER_PAPE",
+              isPlusActive: true,
+              isMinusActive: false
+            }
+          ],
+          // 预约时间
+          dateMinute: '选择时间'
     },
+     /**
+     * 展开收起重量选择
+     */
+    on_show_weight: function (e) {
+      var array= this.data.icon_jia_jian
+      var index=e.currentTarget.dataset.index;
+      var isPlusActive= this.data.icon_jia_jian[index].isPlusActive
+      if(isPlusActive){
+       
+        array[index].isPlusActive=false
+        array[index].isMinusActive=true
+        this.setData({
+          icon_jia_jian:array
+        })
+        console.log( this.data.icon_jia_jian[index].isPlusActive)
+      }else{
+        array[index].isPlusActive=true;
+        array[index].isMinusActive=false;
+        this.setData({
+          icon_jia_jian:array
+        })
+        console.log( this.data.icon_jia_jian[index].isPlusActive)
+      }
+     
+
+    },
+
+     /**
+   * 年月日时分选择类型的回调函数，可以在该函数得到选择的时间
+   */
+  selectDateMinuteChange(ev) {
+    this.setData({
+      dateMinute: ev.detail.value
+    })
+  },
      // 顶部tab标签，点击出现切换
      handleTabsItemChange(e) {
         // 1 获取被点击的标题索引
@@ -44,6 +111,10 @@ Page({
         this.setData({
           tabs:tabs
         })
+      },
+      submit_order:function(e){
+        console.log(e)
+
       },
     request1:function(){
         wx.request({
@@ -61,7 +132,41 @@ Page({
         
       },
 
-
+      /**
+     * 已下单浏览
+     */
+    over_view_order : function (e) {
+      console.log(456);
+      wx.showActionSheet({
+        itemList: [1,2,3,4,5],
+        success(res){
+          console.log(123);
+          console.log(res);
+          // if (res.tapIndex === 0){
+          //   wx.chooseVideo({
+          //     sourceType: ['camera'],
+          //     success(res){
+          //       console.log(res.tempFilePath);
+          //     }
+          //   })
+          // }else if (res.tapIndex === 1){
+          //   wx.chooseImage({
+          //     count: 3, // 设置最多三张
+          //     sizeType: ['original', 'compressed'], 
+          //     sourceType: ['album', 'camera'], 
+          //     success (res) {
+          //       var tempFilePaths = res.tempFilePaths;
+          //       // 图片预览
+          //       wx.previewImage({
+          //         current: res.tempFilePaths[0],
+          //         urls: res.tempFilePaths
+          //       })
+          //     }
+          //   })
+          // }
+        }
+      })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

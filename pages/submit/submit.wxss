@@ -1,1 +1,189 @@
 /* pages/submit/submit.wxss */
+
+/* 阿里巴巴矢量库拿了一个自定义icon图标过来 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 2935280 */
+  src: url('//at.alicdn.com/t/font_2935280_hsfnrvb2uf6.woff2?t=1636770024896') format('woff2'),
+       url('//at.alicdn.com/t/font_2935280_hsfnrvb2uf6.woff?t=1636770024896') format('woff'),
+       url('//at.alicdn.com/t/font_2935280_hsfnrvb2uf6.ttf?t=1636770024896') format('truetype');
+}
+.iconfont{
+  font-family: 'iconfont';
+  color: rgb(16, 92, 235);
+  font-size: 20px;
+}
+
+.icon-jia::before{
+  content: '\e601';
+}
+
+.icon-jian::before{
+  content: '\e600';
+}
+
+/* 加减号后面的文本的排版 */
+.text_after_jiajian_wrap {
+  /* 文字左边填充填充 */
+  padding-left: 20rpx;
+  /* 让所有弹性盒模型对象的子元素都有相同的长度 */
+  flex: 2;
+  /* display 属性规定元素应该生成的框的类型 */
+  display: flex;
+  /* 横轴方向靠左对齐 */
+  justify-content: left;
+  /* 纵轴方向居中 */
+  align-items: center;
+  font-size: 28rpx;
+  
+}
+/* 价格文本的样式 */
+.text_price_wrap {
+  /* display 属性规定元素应该生成的框的类型 */
+  display: flex;
+  /* 横轴方向靠左对齐 */
+  justify-content: right;
+  /* 纵轴方向居中 */
+  align-items: center;
+  font-size: 28rpx;
+  
+}
+.submit_item {
+  /* 伸缩盒子 */
+  display: flex;
+  /* 文字左右填充 */
+  padding: 10rpx;
+  /* 设置底部线条 */
+  border-bottom: 1rpx solid rgb(19, 228, 228);
+   /* 设置背景颜色 */
+  background-color: rgb(250, 244, 244);
+  /* 设置边框线条粗细 */
+  border:0px solid;
+  /* 设置边框圆角 */
+  border-radius:8px;
+  margin:10px;
+}
+/* 最近参考价格 */
+.reference_price {
+  flex: 1;
+  display: flex;
+  /* 对齐方式 */
+  justify-content: left;
+  align-items: center;
+}
+/* 地址信息 */
+.position {
+  flex: 2;
+  display: flex;
+   /* 对齐方式 */
+  justify-content: flex-end;
+  align-items: center;
+}
+/* 可提交的条目 */
+.submit_item {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(250, 248, 244);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    /* 设置边框圆角 */
+    border-radius:8px;
+    margin:10px
+  }
+  /* 顶部图片 */
+  .sign {
+    top: 10%;
+    left: 10rpx;
+    height: 160rpx;
+    width: 90%;
+    padding: 35rpx
+  }
+   /* 提示文字1 */
+   .reminder1 {
+  display: table;
+}
+  /*  提示文字2 */
+  .reminder2 {
+    color: red;
+    display: table;
+    padding-left: 40rpx;
+}
+
+.mesg_item {
+  /* 伸缩盒子 */
+  display: flex;
+  /* 文字左右填充 */
+  padding: 10rpx;
+  /* 设置底部线条 */
+  border-bottom: 1rpx solid rgb(19, 228, 228);
+   /* 设置背景颜色 */
+  background-color: rgb(250, 244, 244);
+  /* 设置边框线条粗细 */
+  border:0px solid;
+  /* 设置边框圆角 */
+  border-radius:8px;
+  margin:10px;
+}
+/* 留言备注 */
+.mesg_sign {
+  flex: 1;
+  display: flex;
+  /* 对齐方式 */
+  justify-content: left;
+  /* 纵向排在顶部 */
+  align-items: flex-start;
+}
+/* 留言备注内容 */
+.mesg_content {
+  flex: 3;
+  display: flex;
+  /* 对齐方式 */
+  justify-content: left;
+  align-items: center;
+}
+
+/* 订单提交按钮 */
+.submit_order {
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  bottom: 5rpx;
+  flex: 2;
+  left: 70%;
+  height: 9%;
+  width: 30%;
+  /* 定义每个角的弧度 */
+  border-radius: 0 35rpx 35rpx 0 ;
+  color: rgb(255, 255, 255);
+  background-color: yellowgreen;
+  align-items: center;
+}
+/* 订单浏览按钮 */
+.over_view_order {
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  bottom: 5rpx;
+  flex: 1;
+  height: 9%;
+  width: 70%;
+  /* 定义每个角的弧度 */
+  border-radius: 35rpx 0  0 35rpx ;
+  color: rgb(255, 255, 255);
+  background-color: royalblue;
+   /* 文本对齐方式 */
+   justify-content: flex-start;
+   align-items: center;
+}
+
+/* 时间选择触发区域调整 */
+.show-date-time-box {
+  padding: 10rpx 30rpx;
+
+}
+
+  

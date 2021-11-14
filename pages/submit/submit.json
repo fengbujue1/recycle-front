@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "Tabs":"../../components/Tabs/Tabs"
+    "Tabs":"../../components/Tabs/Tabs",
+    "date-time-picker": "/components/date-time-picker/index"
   },
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#0055ff",
