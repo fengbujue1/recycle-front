@@ -5,6 +5,7 @@
         "pages/my/my",
         "pages/order/order",
         "pages/submit/submit",
+        "pages/submit2/submit2",
         "pages/address/address",
         "pages/addAddress/addAddress"
     ],

@@ -5,102 +5,154 @@
     <view class="reference_price">回收参考价格</view>
     <view class="position">地址</view>
 </view>
-<view class="submit_item" bindtap="on_show_weight" data-index="0">
-    <view><icon wx:if="{{icon_jia_jian[0].isPlusActive}}" class="iconfont icon-jia "></icon>
-   <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-   <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块</view>
-   <view class="text_price_wrap">{{}}元/公斤</view>
-</view>
-<view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
-    <radio-group  style="padding-left: 25rpx">
-        <!-- 重量档位-->
-        <radio value="1">1~25公斤</radio>
-        <radio value="2">25~50公斤</radio>
-        <radio value="3">50~250公斤</radio>
-        <radio value="4">250公斤以上</radio>
-    </radio-group>
-</view>
-
-<view class="submit_item" bindtap="on_show_weight" data-index="1">
-    <view><icon wx:if="{{icon_jia_jian[1].isPlusActive}}" class="iconfont icon-jia "></icon>
-   <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-   <view class="text_after_jiajian_wrap">纯黄纸（如空调箱，快递箱等）</view>
-   <view class="text_price_wrap">{{}}元/公斤</view>
-</view>
-<view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
-    <radio-group  style="padding-left: 25rpx">
-        <!-- 重量档位-->
-        <radio value="1">1~25公斤</radio>
-        <radio value="2">25~50公斤</radio>
-        <radio value="3">50~250公斤</radio>
-        <radio value="4">250公斤以上</radio>
-    </radio-group>
-</view>
-
-<view class="submit_item" bindtap="on_show_weight" data-index="2">
-    <view><icon wx:if="{{icon_jia_jian[2].isPlusActive}}" class="iconfont icon-jia "></icon>
-   <icon wx:if="{{icon_jia_jian[2].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-   <view class="text_after_jiajian_wrap">纯花纸（如饮料箱等）</view>
-   <view class="text_price_wrap">{{}}元/公斤</view>
-</view>
-<view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
-    <radio-group  style="padding-left: 25rpx">
-        <!-- 重量档位-->
-        <radio value="1">1~25公斤</radio>
-        <radio value="2">25~50公斤</radio>
-        <radio value="3">50~250公斤</radio>
-        <radio value="4">250公斤以上</radio>
-    </radio-group>
-</view>
-<view class="submit_item" bindtap="on_show_weight" data-index="3">
-    <view><icon wx:if="{{icon_jia_jian[3].isPlusActive}}" class="iconfont icon-jia "></icon>
-   <icon wx:if="{{icon_jia_jian[3].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-   <view class="text_after_jiajian_wrap">杂纸</view>
-   <view class="text_price_wrap">{{}}元/公斤</view>
-</view>
-<view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
-    <radio-group style="padding-left: 25rpx">
-        <!-- 重量档位-->
-        <radio value="1">1~25公斤</radio>
-        <radio value="2">25~50公斤</radio>
-        <radio value="3">50~250公斤</radio>
-        <radio value="4">250公斤以上</radio>
-    </radio-group>
-</view>
-
-<view style="background-color: rgb(250, 244, 244)">
-    <view style="padding: 20rpx;" class="reminder1">温馨提示：</view>
-    <view class="reminder2">1.卢本伟牛逼</view>
-    <view class="reminder2">2.加油，奥利给</view>
-</view>
-<view class="submit_item">
-    <view class="reference_price">预约时间</view>
-    <radio-group style="padding-left: 25rpx;display: flex; flex: 4;">
-        <!-- 重量档位-->
-        <radio value="1">尽快上门</radio>
-        <date-time-picker
-            mode="dateminute" 
-            value="{{dateMinute}}"
-            bindchange="selectDateMinuteChange">
-            <radio value="2">
-                <view>{{dateMinute}}</view>
-            </radio> 
-        </date-time-picker>
-    </radio-group>
-</view>
-<view class="submit_item">
-    <view class="reference_price">回收地址</view>
-    <navigator url="/pages/address/address" >></navigator>
-</view>
-<view class="mesg_item" >
-    <view class="mesg_sign" >留言备注</view>
-        <view class="mesg_content">
-        <textarea placeholder="请输入留言备注" style="height: 200rpx; width: 100%;"></textarea>
+<form bindsubmit="submit_order">
+    <!-- 根据当前tab是否活跃，来展示对应条目 -->
+    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="0">
+        <view><icon wx:if="{{icon_jia_jian[0].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
-</view>
+    <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
+        <radio-group  style="padding-left: 25rpx" name="MIXTURE_PAPE">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
 
-<view style="height: 500rpx;"></view>
-<button class="over_view_order" bindtap="over_view_order">您已下单</button>
-<button class="submit_order" bindtap="over_view_order">一键下单</button>
+    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="1">
+        <view><icon wx:if="{{icon_jia_jian[1].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">纯黄纸（如空调箱，快递箱等）</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
+        <radio-group  style="padding-left: 25rpx"  name="YELLOW_PAPE">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+
+    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="2">
+        <view><icon wx:if="{{icon_jia_jian[2].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[2].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">纯花纸（如饮料箱等）</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
+        <radio-group  style="padding-left: 25rpx" name="FLOWER_PAPE">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="3">
+        <view><icon wx:if="{{icon_jia_jian[3].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[3].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">杂纸</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
+        <radio-group style="padding-left: 25rpx" name="OTHER_PAPE">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+
+    <view hidden="{{!tabs[1].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="4">
+        <view><icon wx:if="{{icon_jia_jian[4].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[4].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">塑料瓶</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[4].isPlusActive}}">
+        <radio-group style="padding-left: 25rpx" name="PLASTIC_BOTTLE">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+
+    <view hidden="{{!tabs[1].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="5">
+        <view><icon wx:if="{{icon_jia_jian[5].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[5].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">旧电池，旧电瓶</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" name="OLD_BATTERIES">
+        <radio-group style="padding-left: 25rpx">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+
+    <view hidden="{{!tabs[2].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="6">
+        <view><icon wx:if="{{icon_jia_jian[6].isPlusActive}}" class="iconfont icon-jia "></icon>
+    <icon wx:if="{{icon_jia_jian[6].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+    <view class="text_after_jiajian_wrap">废铁</view>
+    <view class="text_price_wrap">{{}}元/公斤</view>
+    </view>
+    <view wx:if="{{!icon_jia_jian[6].isPlusActive}}" name="SCRAP_IRON">
+        <radio-group style="padding-left: 25rpx">
+            <!-- 重量档位-->
+            <radio value="1">1~25公斤</radio>
+            <radio value="2">25~50公斤</radio>
+            <radio value="3">50~250公斤</radio>
+            <radio value="4">250公斤以上</radio>
+        </radio-group>
+    </view>
+
+    <view style="background-color: rgb(250, 244, 244)">
+        <view style="padding: 20rpx;" class="reminder1">温馨提示：</view>
+        <view class="reminder2">1.卢本伟牛逼</view>
+        <view class="reminder2">2.加油，奥利给</view>
+    </view>
+    <view class="submit_item">
+        <view class="reference_price">预约时间</view>
+        <radio-group style="padding-left: 25rpx;display: flex; flex: 4;">
+            <!-- 重量档位-->
+            <radio value="1">尽快上门</radio>
+            <date-time-picker
+                mode="dateminute" 
+                value="{{dateMinute}}"
+                bindchange="selectDateMinuteChange">
+                <radio value="2">
+                    <view>{{dateMinute}}</view>
+                </radio> 
+            </date-time-picker>
+        </radio-group>
+    </view>
+    <view class="submit_item">
+        <view class="reference_price">回收地址</view>
+        <navigator url="/pages/address/address" >请选择地址></navigator>
+    </view>
+    <view class="mesg_item" >
+        <view class="mesg_sign" >留言备注</view>
+            <view class="mesg_content">
+            <textarea placeholder="请输入留言备注" style="height: 200rpx; width: 100%;"></textarea>
+        </view>
+    </view>
+
+    <view style="height: 500rpx;"></view>
+    <button class="over_view_order" bindtap="over_view_order">您已下单的商品</button>
+    <button class="submit_order"  form-type="submit">一键下单</button>
+
+</form>
     
 <!-- <button bindtap="submit_order">提交</button> -->

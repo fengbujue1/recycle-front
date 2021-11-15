@@ -61,6 +61,29 @@ Page({
               isPlusActive: true,
               isMinusActive: false
             }
+            ,
+            {
+              // 塑料瓶
+              id: 4,
+              value: "PLASTIC_BOTTLE",
+              isPlusActive: true,
+              isMinusActive: false
+            }
+            ,
+            {
+              // 旧电池，旧电瓶
+              id: 5,
+              value: "OLD_BATTERIES",
+              isPlusActive: true,
+              isMinusActive: false
+            },
+            {
+              // 废铁
+              id: 6,
+              value: "SCRAP_IRON",
+              isPlusActive: true,
+              isMinusActive: false
+            }
           ],
           // 预约时间
           dateMinute: '选择时间'
@@ -79,19 +102,14 @@ Page({
         this.setData({
           icon_jia_jian:array
         })
-        console.log( this.data.icon_jia_jian[index].isPlusActive)
       }else{
         array[index].isPlusActive=true;
         array[index].isMinusActive=false;
         this.setData({
           icon_jia_jian:array
         })
-        console.log( this.data.icon_jia_jian[index].isPlusActive)
       }
-     
-
     },
-
      /**
    * 年月日时分选择类型的回调函数，可以在该函数得到选择的时间
    */
@@ -106,33 +124,32 @@ Page({
         const index  = e.detail.index;
         // 2 修改源数组
         let  tabs  = this.data.tabs;
-        tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
+        
+        tabs.forEach((v, i) =>{
+          i === index ? v.isActive = true : v.isActive = false;
+
+        })
         // 3 赋值到data中
         this.setData({
           tabs:tabs
         })
       },
+
+      // 订单提交
       submit_order:function(e){
         console.log(e)
-
-      },
-    request1:function(){
-        wx.request({
-          method:"PUT",
-          dataType:"json",
-          url: 'http://localhost:8080/recycle/recycle/submit',
-          data:{"addressId":3,"items":[{"heightRange":1,"heightRangeEnum":"RANGE1","recycleKind":1}],"recycleType":1,"remark":"asdasdasdad","status":1,"time":1634369408505,"userId":1},
-          success (res) {
-            console.log(res.data)
-          },
-          fail (res) {
-            console.log(res.data)
-          }
+        console.log(e.detail.value)
+        for(let key  in e.detail.value){
+           // 通过缓存技术来进行页面间的数据传输
+          wx.setStorageSync(key, e.detail.value[key])
+        }
+        wx.navigateTo({
+          url: '/pages/submit2/submit2',
         })
-        
+
       },
 
-      /**
+       /**
      * 已下单浏览
      */
     over_view_order : function (e) {
@@ -167,6 +184,23 @@ Page({
         }
       })
     },
+    request1:function(){
+        wx.request({
+          method:"PUT",
+          dataType:"json",
+          url: 'http://localhost:8080/recycle/recycle/submit',
+          data:{"addressId":3,"items":[{"heightRange":1,"heightRangeEnum":"RANGE1","recycleKind":1}],"recycleType":1,"remark":"asdasdasdad","status":1,"time":1634369408505,"userId":1},
+          success (res) {
+            console.log(res.data)
+          },
+          fail (res) {
+            console.log(res.data)
+          }
+        })
+        
+      },
+
+     
     /**
      * 生命周期函数--监听页面加载
      */
