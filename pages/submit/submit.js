@@ -137,14 +137,19 @@ Page({
 
       // 订单提交
       submit_order:function(e){
-        console.log(e)
-        console.log(e.detail.value)
+        // 缓存的获取只能异步，适用于此场景，改用页面参数传值
+        // for(let key  in e.detail.value){
+        //    // 通过缓存技术来进行页面间的数据传输
+        //   wx.setStorageSync(key, e.detail.value[key])
+        // }
+
+        let arr=new Array();
         for(let key  in e.detail.value){
-           // 通过缓存技术来进行页面间的数据传输
-          wx.setStorageSync(key, e.detail.value[key])
+          arr.push({name:key,weight:e.detail.value[key]})
         }
+        var data = JSON.stringify(arr)
         wx.navigateTo({
-          url: '/pages/submit2/submit2',
+          url: '/pages/submit2/submit2?data=' + data ,
         })
 
       },

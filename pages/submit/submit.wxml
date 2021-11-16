@@ -151,7 +151,7 @@
 
     <view style="height: 500rpx;"></view>
     <button class="over_view_order" bindtap="over_view_order">您已下单的商品</button>
-    <button class="submit_order"  form-type="submit">一键下单</button>
+    <button class="submit_order"  form-type="submit">一键回收</button>
 
 </form>
     

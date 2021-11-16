@@ -12,7 +12,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var data = JSON.parse(options.data)
+        console.log(data)
+        this.setData({
+            order_details:data
+        })
     },
 
     /**
@@ -26,28 +30,60 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        wx.getStorageInfo({
-            success (res) {
-            const keys=res.keys;
-            for(var idx=0;idx<keys.length;idx++){
-                let key=keys[idx];
-                if ("FLOWER_PAPE"===key) {
-                    console.log (key)
-                }
-                if ("OTHER_PAPE"===key) {
-                    console.log (key)
-                }
-                if ("MIXTURE_PAPE"===key) {
-                    console.log (key)
-                }
-                if ("YELLOW_PAPE"===key) {
-                    console.log (key)
-                }
-            }
-              console.log(res.keys)
- 
-            }
-          })
+        // 使用这个方法取值，行不通
+        // let details= new Array();
+        // wx.getStorageInfo({
+        //     success (res) {
+        //     const keys=res.keys;
+        //     for(var idx=0;idx<keys.length;idx++){
+        //         let key1=keys[idx];
+        //         if ("FLOWER_PAPE"===key1) {
+        //             // 同步取值
+        //             wx.getStorage({
+        //                 key: key1,
+        //                 success (res) {
+        //                     details.push({name:key1,weight:res.data})
+        //                     console.log(details)
+        //                 }
+        //                 })     
+        //         }
+        //         if ("OTHER_PAPE"===key1) {
+        //            // 同步取值
+        //            wx.getStorage({
+        //             key: key1,
+        //             success (res) {
+        //                 details.push({name:key1,weight:res.data})
+        //                 console.log(details)
+        //             }
+        //             }) 
+        //         }
+        //         if ("MIXTURE_PAPE"===key1) {
+        //             // 同步取值
+        //             wx.getStorage({
+        //                 key: key1,
+        //                 success (res) {
+        //                     details.push({name:key1,weight:res.data})
+        //                     console.log(details)
+        //                 }
+        //                 }) 
+        //         }
+        //         if ("YELLOW_PAPE"===key1) {
+        //             // 同步取值
+        //             wx.getStorage({
+        //                 key: key1,
+        //                 success (res) {
+        //                     details.push({name:key1,weight:res.data})
+        //                 console.log(details)
+        //                 }
+        //                 }) 
+        //         }
+        //         console.log(details)
+        //     }
+        //     }
+        //   })
+          
+        //   console.log(details)
+        //   console.log(this.data.order_details)
     },
 
     /**

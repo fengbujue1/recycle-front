@@ -1,1 +1,107 @@
 /* pages/submit2/submit2.wxss */
+.info {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(250, 244, 244);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    /* 设置边框圆角 */
+    border-radius:8px;
+    margin:10px;
+  }
+    /* 左边信息栏 */
+.left_info {
+    flex: 1;
+    display: flex;
+    /* 对齐方式 */
+    justify-content: left;
+    align-items: center;
+  }
+  /* 右边信息栏 */
+  .right_info {
+    flex: 2;
+    display: flex;
+     /* 对齐方式 */
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .item_title_out {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(250, 244, 244);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    /* 设置边框圆角 */
+    border-radius:8px;
+    margin:20px 0px 20px 0px;
+  }
+
+  /* 标题栏 */
+  .item_title {
+    flex: 2;
+    display: flex;
+     /* 对齐方式 */
+    justify-content: flex-start;
+    align-items: center;
+    font-size: larger;
+    height: 60rpx;
+  }
+
+  /* 具体的类目 */
+  .items {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(188, 218, 179);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    margin:10px 0px 10px 0px;
+    height: 150rpx;
+  }
+  /* 图片 */
+  .items_pic {
+    flex: 2;
+    display: flex;
+     /* 对齐方式 */
+    justify-content: flex-start;
+    align-items: center;
+    font-size: larger;
+    height: 60rpx;
+  }
+  .paper_type {
+    height: 12%;
+    width: 28%;
+    border-radius: 25rpx;
+  }
+  /* 信息 */
+  .items_info {
+    flex: 2;
+    display: flex;
+     /* 对齐方式 */
+    justify-content: flex-start;
+    align-items: center;
+    font-size: larger;
+    height: 100rpx;
+  }
+  /* 具体的信息 */
+  .items_info_specific {
+
+     /* 对齐方式 */
+    justify-content: flex-start;
+    align-items: center;
+    height: 50rpx;
+  }
