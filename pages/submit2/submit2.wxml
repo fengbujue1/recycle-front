@@ -1,7 +1,7 @@
 <!--下单前的最后预览页面-->
 <view class="info">
     <view class="left_info">预约时间</view>
-    <view class="right_info">时间？</view>
+    <view class="right_info">{{appointedTime}}</view>
 </view>
 <view class="info">
     <view class="left_info">回收地址</view>
@@ -12,11 +12,12 @@
     <view class="left_info">回收类目</view>
 </view>
 
-<view class="items">
+
+<view wx:for="{{order_details}}"  wx:for-item="itm" wx:for-index="idx" class="items">
     <image mode="widthFix" src="../../resources/main/page1.png" class="paper_type"></image> 
-    <view>
-        <view class="items_info_specific">{{order_details[0].name}}</view>
-        <view class="items_info_specific">price</view>
-        <view class="items_info_specific">{{order_details[0].weight}}</view>
+    <view> 
+        <view class="items_info_specific">{{itm.name}}</view>
+        <view class="items_info_specific">0元/公斤</view>
+        <view class="items_info_specific">{{itm.value}}</view>
     </view>
 </view>

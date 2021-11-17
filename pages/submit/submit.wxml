@@ -125,14 +125,14 @@
     </view>
     <view class="submit_item">
         <view class="reference_price">预约时间</view>
-        <radio-group style="padding-left: 25rpx;display: flex; flex: 4;">
-            <!-- 重量档位-->
-            <radio value="1">尽快上门</radio>
+        <radio-group style="padding-left: 25rpx;display: flex; flex: 4;" name="appointedTime">
+            <!-- 上门时间预约-->
+            <!-- value="{{dateMinute}}" -->
+            <radio value="尽快上门">尽快上门</radio>
             <date-time-picker
                 mode="dateminute" 
-                value="{{dateMinute}}"
                 bindchange="selectDateMinuteChange">
-                <radio value="2">
+                <radio value="{{dateMinute}}">
                     <view>{{dateMinute}}</view>
                 </radio> 
             </date-time-picker>
@@ -145,7 +145,7 @@
     <view class="mesg_item" >
         <view class="mesg_sign" >留言备注</view>
             <view class="mesg_content">
-            <textarea placeholder="请输入留言备注" style="height: 200rpx; width: 100%;"></textarea>
+            <textarea placeholder="请输入留言备注" style="height: 200rpx; width: 100%;" name="note"></textarea>
         </view>
     </view>
 

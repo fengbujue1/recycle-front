@@ -5,7 +5,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-        order_details:[]
+        order_details:[],
+        note:"",
+        appointedTime:"",
+        addressStr:"",
+        addressId:""
     },
 
     /**
@@ -14,8 +18,30 @@ Page({
     onLoad: function (options) {
         var data = JSON.parse(options.data)
         console.log(data)
+        var deatils=new Array();
+        for(var i=0;i<data.length;i++){
+            if(data[i].name==="note"){
+                this.setData({
+                    note:data[i].value
+                })
+            }else if(data[i].name==="appointedTime"){
+                this.setData({
+                    appointedTime:data[i].value
+                })
+            }else if(data[i].name==="addressStr"){
+                this.setData({
+                    addressStr:data[i].value
+                })
+            }else{
+                deatils.push(data[i])
+            }
+        }
         this.setData({
-            order_details:data
+            order_details:deatils
+        })
+
+        this.setData({
+            order_details:deatils
         })
     },
 

@@ -1,4 +1,5 @@
 // pages/submit/submit.js
+import WxValidate from '../../utils/WxValidate.js'
 Page({
 
     /**
@@ -142,11 +143,49 @@ Page({
         //    // 通过缓存技术来进行页面间的数据传输
         //   wx.setStorageSync(key, e.detail.value[key])
         // }
-
         let arr=new Array();
+        let tag=false;
+        console.log(e.detail.value)
         for(let key  in e.detail.value){
-          arr.push({name:key,weight:e.detail.value[key]})
+          // 表单验证
+          if(key==="appointedTime"){
+            if(e.detail.value[key]===""){
+              wx.showToast({
+                title: '请选择预约时间',
+                icon: 'error',
+                duration: 2000//持续的时间
+              })
+              return
+            }
+          }else if(key==="appointedTime"){
+            // if(e.detail.value[key]==="addressStr"){
+            //   wx.showToast({
+            //     title: '请选择地址',
+            //     icon: 'error',
+            //     duration: 2000//持续的时间
+            //   })
+            //   return
+            // }
+          }else if(key==="note"){
+            
+          }else{
+            tag=true
+          }    
+          arr.push({name:key,value:e.detail.value[key]}) 
         }
+        console.log(tag)
+        if(!tag){
+          wx.showToast({
+            title: '请选择重量',
+            icon: 'error',
+            duration: 2000//持续的时间
+            
+          })
+          return
+        }
+
+        // 参数带入
+        // 因为到下个页面要根据key做数据拆分，分别赋值到不同元素，所以这里才把key 和 value 都进行了赋值
         var data = JSON.stringify(arr)
         wx.navigateTo({
           url: '/pages/submit2/submit2?data=' + data ,
