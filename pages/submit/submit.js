@@ -169,6 +169,14 @@ Page({
           }else if(key==="note"){
             
           }else{
+            if(e.detail.value[key]===""){
+              wx.showToast({
+                title: '请选择重量',
+                icon: 'error',
+                duration: 2000//持续的时间
+              })
+              return
+            }
             tag=true
           }    
           arr.push({name:key,value:e.detail.value[key]}) 
@@ -228,23 +236,6 @@ Page({
         }
       })
     },
-    request1:function(){
-        wx.request({
-          method:"PUT",
-          dataType:"json",
-          url: 'http://localhost:8080/recycle/recycle/submit',
-          data:{"addressId":3,"items":[{"heightRange":1,"heightRangeEnum":"RANGE1","recycleKind":1}],"recycleType":1,"remark":"asdasdasdad","status":1,"time":1634369408505,"userId":1},
-          success (res) {
-            console.log(res.data)
-          },
-          fail (res) {
-            console.log(res.data)
-          }
-        })
-        
-      },
-
-     
     /**
      * 生命周期函数--监听页面加载
      */

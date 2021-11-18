@@ -105,3 +105,36 @@
     align-items: center;
     height: 50rpx;
   }
+/* 订单提交按钮 */
+.submit_order {
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  bottom: 5rpx;
+  flex: 2;
+  left: 70%;
+  height: 9%;
+  width: 30%;
+  /* 定义每个角的弧度 */
+  border-radius: 0 35rpx 35rpx 0 ;
+  color: rgb(255, 255, 255);
+  background-color: yellowgreen;
+  align-items: center;
+}
+/* 订单浏览按钮 */
+.over_view_order {
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  bottom: 5rpx;
+  flex: 1;
+  height: 9%;
+  width: 70%;
+  /* 定义每个角的弧度 */
+  border-radius: 35rpx 0  0 35rpx ;
+  color: rgb(255, 255, 255);
+  background-color: royalblue;
+   /* 文本对齐方式 */
+   justify-content: flex-start;
+   align-items: center;
+}

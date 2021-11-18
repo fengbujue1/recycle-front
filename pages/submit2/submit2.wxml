@@ -21,3 +21,6 @@
         <view class="items_info_specific">{{itm.value}}</view>
     </view>
 </view>
+
+<button class="over_view_order" bindtap="over_view_order"></button>
+<button class="submit_order"  bindtap="submit_order">一键回收</button>

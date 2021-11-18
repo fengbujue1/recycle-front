@@ -45,6 +45,30 @@ Page({
         })
     },
 
+    submit_order:function(){
+        
+        wx.request({
+          method:"PUT",
+          dataType:"json",
+          url: 'http://localhost:8080/recycle/recycle/submit',
+          data:{
+              "addressId":this.data.addressId,
+              "items":this.data.order_details,
+              "recycleType":1,
+              "remark":this.data.note,
+              "timeStr":this.data.appointedTime,
+              "userId":1
+            },
+          success (res) {
+            console.log(res.data)
+          },
+          fail (res) {
+            console.log(res.data)
+          }
+        })
+        
+      },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
