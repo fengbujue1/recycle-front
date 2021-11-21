@@ -1,2 +1,49 @@
 <!--pages/addAddress/addAddress.wxml-->
-<text>pages/addAddress/addAddress.wxml</text>
+<form bindsubmit="addAddress">
+    <view class="address_item">
+        <view class="address_sign" >联系人</view>
+        <view class="address_content">
+            <input  maxlength="20" placeholder="请输入姓名" name="name"/>
+        </view>
+    </view>
+    <view class="address_item">
+        <view class="address_sign" >手机号</view>
+        <view class="address_content">
+            <input  maxlength="11" placeholder="请输入联系人电话" name="tel"/>
+        </view>
+    </view>
+    <view class="address_item">
+        <view class="address_sign" >省市区</view>
+        <view class="address_content">
+            <input/>
+        </view>
+    </view>
+    <view class="address_item">
+        <view class="address_sign" >所属街道</view>
+        <view class="address_content">
+            <input/>
+        </view>
+    </view>
+    <view class="address_item">
+        <view class="address_sign" >回收地址</view>
+        <view class="address_content">
+            <input/>
+        </view>
+    </view>
+    <view class="address_item">
+        <view class="address_sign" >详细地址</view>
+        <view class="address_content">
+            <input/>
+        </view>
+    </view>
+
+    <view class="address_item2">
+        <view class="address_sign" >设为默认地址</view>
+        <view class="address_content">
+            <switch checked="true"></switch>
+        </view>
+    </view>
+   <view> <button class="submit_order">一键回收</button></view>
+   
+
+</form>

@@ -1,4 +1,5 @@
 // pages/submit2/submit2.js
+var app = getApp()
 Page({
 
     /**
@@ -9,7 +10,9 @@ Page({
         note:"",
         appointedTime:"",
         addressStr:"",
-        addressId:""
+        addressId:"",
+        order_item_name:[],
+        order_item_weight:[]
     },
 
     /**
@@ -41,8 +44,10 @@ Page({
         })
 
         this.setData({
-            order_details:deatils
+            order_item_name:app.globalData.order_item_name,
+            order_item_weight:app.globalData.order_item_weight
         })
+
     },
 
     submit_order:function(){

@@ -123,17 +123,7 @@ Page({
      handleTabsItemChange(e) {
         // 1 获取被点击的标题索引
         const index  = e.detail.index;
-        // 2 修改源数组
-        let  tabs  = this.data.tabs;
-        
-        tabs.forEach((v, i) =>{
-          i === index ? v.isActive = true : v.isActive = false;
-
-        })
-        // 3 赋值到data中
-        this.setData({
-          tabs:tabs
-        })
+        this.changeTabs(index)
       },
 
       // 订单提交
@@ -236,11 +226,25 @@ Page({
         }
       })
     },
+    changeTabs(index){
+      // 2 修改源数组
+      let  tabs  = this.data.tabs;
+            
+      tabs.forEach((v, i) =>{
+        i === index ? v.isActive = true : v.isActive = false;
+
+      })
+      // 3 赋值到data中
+      this.setData({
+        tabs:tabs
+      })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      var index = JSON.parse(options.index)
+      this.changeTabs(index)
     },
 
     /**

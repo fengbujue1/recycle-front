@@ -16,9 +16,9 @@
 <view wx:for="{{order_details}}"  wx:for-item="itm" wx:for-index="idx" class="items">
     <image mode="widthFix" src="../../resources/main/page1.png" class="paper_type"></image> 
     <view> 
-        <view class="items_info_specific">{{itm.name}}</view>
-        <view class="items_info_specific">0元/公斤</view>
-        <view class="items_info_specific">{{itm.value}}</view>
+        <view class="items_info_specific">{{order_item_name[itm.name]}}</view>
+        <view class="items_info_specific">参考单价：0元/公斤</view>
+        <view class="items_info_specific">预估重量：{{order_item_weight[itm.value]}}</view>
     </view>
 </view>
 

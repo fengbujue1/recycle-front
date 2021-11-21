@@ -8,6 +8,14 @@ Page({
 
     },
 
+    // 新增收货地址
+    addAddress:function(e){
+        wx.navigateTo({
+            // url: '/pages/addAddress/addAddress?data=' + data ,
+            url: '/pages/addAddress/addAddress' ,
+          })
+    },
+
     // 查询个人地址信息
     getOrdersByStatus:function(peson_id){
         var ordersByTyp= [];

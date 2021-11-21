@@ -26,7 +26,7 @@
   .right_info {
     flex: 2;
     display: flex;
-     /* 对齐方式 */
+     /* 在伸缩盒子找那个留空白的位置 */
     justify-content: flex-end;
     align-items: center;
   }
@@ -50,7 +50,7 @@
   .item_title {
     flex: 2;
     display: flex;
-     /* 对齐方式 */
+     /* 在伸缩盒子找那个留空白的位置 */
     justify-content: flex-start;
     align-items: center;
     font-size: larger;
@@ -76,7 +76,7 @@
   .items_pic {
     flex: 2;
     display: flex;
-     /* 对齐方式 */
+     /* 在伸缩盒子找那个留空白的位置 */
     justify-content: flex-start;
     align-items: center;
     font-size: larger;
@@ -91,7 +91,7 @@
   .items_info {
     flex: 2;
     display: flex;
-     /* 对齐方式 */
+     /* 在伸缩盒子找那个留空白的位置 */
     justify-content: flex-start;
     align-items: center;
     font-size: larger;
@@ -134,7 +134,7 @@
   border-radius: 35rpx 0  0 35rpx ;
   color: rgb(255, 255, 255);
   background-color: royalblue;
-   /* 文本对齐方式 */
+   /* 在伸缩盒子找那个留空白的位置 */
    justify-content: flex-start;
    align-items: center;
 }

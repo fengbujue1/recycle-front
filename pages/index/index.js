@@ -17,9 +17,9 @@ Page({
       motto:'hello 2'
     })
   },
-  skip:function(){
+  skip:function(e){
     wx.navigateTo({
-      url: '/pages/submit/submit',
+      url: '/pages/submit/submit?index=' + e.currentTarget.dataset.index ,
     })
   },
   // 事件处理函数

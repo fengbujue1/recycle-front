@@ -1,1 +1,59 @@
 /* pages/addAddress/addAddress.wxss */
+.address_item {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+     /* 设置背景颜色 */
+    background-color: rgb(241, 241, 241);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    margin:10px;
+    height: 70rpx;
+  }
+  .address_item2 {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+     /* 设置背景颜色 */
+    background-color: rgb(255, 253, 253);
+    /* 设置边框线条粗细 */
+    border:0px solid;
+    margin:10px;
+    height: 70rpx;
+  }
+  /* 地址信息提示 */
+.address_sign {
+    flex: 5;
+    display: flex;
+    /* 在伸缩盒子找那个留空白的位置 */
+    justify-content: left;
+    /* 纵向排在中间 */
+    align-items: center;
+  }
+  /* 地址 输入框表单组件 */
+.address_content {
+    flex: 1;
+    display: flex;
+    /* 在伸缩盒子找那个留空白的位置 */
+    justify-content: end;
+    align-items: center;
+  }
+  /* 订单提交按钮 */
+.submit_order {
+    overflow: visible;
+    /* position: fixed;
+    bottom: 5rpx;
+    flex: 2;
+    left: 70%;
+    height: 9%;*/
+    width: 80%; 
+      /* 设置边框线条粗细 */
+      border:0px solid;
+    /* 定义每个角的弧度 */
+    border-radius: 55rpx 55rpx 55rpx 55rpx ;
+    color: rgb(255, 255, 255);
+    background-color: royalblue;
+    align-items: center;
+  }

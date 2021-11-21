@@ -21,9 +21,9 @@
         <image mode="widthFix" src="/resources/main/swiper/swiper4.png"></image>
     </swiper-item>
 </swiper>
-<image class="paper_type" src="../../resources/main/page1.png" bindtap="skip"></image>
-<image class="image_type2" src="../../resources/main/page2.png" bindtap="skip"></image>
-<image class="image_type3" src="../../resources/main/page3.png" bindtap="skip"></image>
-<image class="paper_type4" src="../../resources/main/page4.png" bindtap="skip"></image>
-<image class="image_type5" src="../../resources/main/page5.png" bindtap="skip"></image>
-<image class="image_type6" src="../../resources/main/page6.png" bindtap="skip"></image>
+<image class="recycel_1" src="../../resources/main/page1.png" bindtap="skip" data-index="0"></image>
+<image class="recycel_2" src="../../resources/main/page2.png" bindtap="skip" data-index="1"></image>
+<image class="recycel_3" src="../../resources/main/page3.png" bindtap="skip" data-index="2"></image>
+<image class="recycel_4" src="../../resources/main/page4.png" bindtap="skip" data-index="3"></image>
+<image class="recycel_5" src="../../resources/main/page5.png" bindtap="skip" data-index="4"></image>
+<image class="recycel_6" src="../../resources/main/page6.png" bindtap="skip" data-index="5"></image>

@@ -38,7 +38,7 @@ page {height: 100%;}
   align-items: center;
   justify-content: column;
 }
-.paper_type {
+.recycel_1 {
   position: fixed;
   top: 46.5%;
   left: 5%;
@@ -46,7 +46,7 @@ page {height: 100%;}
   width: 28%;
   border-radius: 25rpx;
 }
-.image_type2 {
+.recycel_2 {
   position: fixed;
   top: 46.5%;
   left: 35%;
@@ -54,7 +54,7 @@ page {height: 100%;}
   width: 28%;
   border-radius: 25rpx;
 }
-.image_type3 {
+.recycel_3 {
   position: fixed;
   top: 46.5%;
   left: 65%;
@@ -62,7 +62,7 @@ page {height: 100%;}
   width: 28%;
   border-radius: 25rpx;
 }
-.paper_type4 {
+.recycel_4 {
   position: fixed;
   top: 60%;
   left: 5%;
@@ -70,7 +70,7 @@ page {height: 100%;}
   width: 28%;
   border-radius: 25rpx;
 }
-.image_type5 {
+.recycel_5 {
   position: fixed;
   top: 60%;
   left: 35%;
@@ -78,7 +78,7 @@ page {height: 100%;}
   width: 28%;
   border-radius: 25rpx;
 }
-.image_type6 {
+.recycel_6 {
   position: fixed;
   top:60%;
   left: 65%;

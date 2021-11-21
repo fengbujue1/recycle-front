@@ -10,13 +10,13 @@
     <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="0">
         <view><icon wx:if="{{icon_jia_jian[0].isPlusActive}}" class="iconfont icon-jia "></icon>
     <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块</view>
+    <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块）</view>
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
     <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx" name="MIXTURE_PAPE">
+        <radio-group  style="padding-left: 25rpx" name="0">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -30,9 +30,9 @@
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
     <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx"  name="YELLOW_PAPE">
+        <radio-group  style="padding-left: 25rpx"  name="1">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -46,9 +46,9 @@
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
     <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx" name="FLOWER_PAPE">
+        <radio-group  style="padding-left: 25rpx" name="2">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -61,9 +61,9 @@
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
     <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
-        <radio-group style="padding-left: 25rpx" name="OTHER_PAPE">
+        <radio-group style="padding-left: 25rpx" name="3">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -77,9 +77,9 @@
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
     <view wx:if="{{!icon_jia_jian[4].isPlusActive}}">
-        <radio-group style="padding-left: 25rpx" name="PLASTIC_BOTTLE">
+        <radio-group style="padding-left: 25rpx" name="4">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -92,10 +92,10 @@
     <view class="text_after_jiajian_wrap">旧电池，旧电瓶</view>
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
-    <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" name="OLD_BATTERIES">
+    <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" name="5">
         <radio-group style="padding-left: 25rpx">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -108,10 +108,10 @@
     <view class="text_after_jiajian_wrap">废铁</view>
     <view class="text_price_wrap">{{}}元/公斤</view>
     </view>
-    <view wx:if="{{!icon_jia_jian[6].isPlusActive}}" name="SCRAP_IRON">
+    <view wx:if="{{!icon_jia_jian[6].isPlusActive}}" name="6">
         <radio-group style="padding-left: 25rpx">
             <!-- 重量档位-->
-            <radio value="1">1~25公斤</radio>
+            <radio value="1">0~25公斤</radio>
             <radio value="2">25~50公斤</radio>
             <radio value="3">50~250公斤</radio>
             <radio value="4">250公斤以上</radio>
@@ -145,7 +145,7 @@
     <view class="mesg_item" >
         <view class="mesg_sign" >留言备注</view>
             <view class="mesg_content">
-            <textarea placeholder="请输入留言备注" style="height: 200rpx; width: 100%;" name="note"></textarea>
+            <textarea maxlength="110" placeholder="请输入留言备注" style="height: 200rpx; width: 100%;" name="note"></textarea>
         </view>
     </view>
 

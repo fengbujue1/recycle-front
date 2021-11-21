@@ -66,7 +66,7 @@
 .reference_price {
   flex: 1;
   display: flex;
-  /* 对齐方式 */
+  /* 在伸缩盒子找那个留空白的位置 */
   justify-content: left;
   align-items: center;
 }
@@ -74,7 +74,7 @@
 .position {
   flex: 2;
   display: flex;
-   /* 对齐方式 */
+   /* 在伸缩盒子找那个留空白的位置 */
   justify-content: flex-end;
   align-items: center;
 }
@@ -132,7 +132,7 @@
 .mesg_sign {
   flex: 1;
   display: flex;
-  /* 对齐方式 */
+  /* 在伸缩盒子找那个留空白的位置 */
   justify-content: left;
   /* 纵向排在顶部 */
   align-items: flex-start;
@@ -141,7 +141,7 @@
 .mesg_content {
   flex: 3;
   display: flex;
-  /* 对齐方式 */
+  /* 在伸缩盒子找那个留空白的位置 */
   justify-content: left;
   align-items: center;
 }
