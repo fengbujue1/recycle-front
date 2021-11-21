@@ -14,9 +14,14 @@
     </view>
     <view class="address_item">
         <view class="address_sign" >省市区</view>
-        <view class="address_content">
-            <input/>
+        <view class="address_content3">
+            {{provinces}}
         </view>
+        <picker mode="region" bindchange="selectProvinces" value="{{provinces}}">
+            <button class="picker_button">
+                选择地区
+            </button>
+        </picker>
     </view>
     <view class="address_item">
         <view class="address_sign" >所属街道</view>
@@ -26,24 +31,28 @@
     </view>
     <view class="address_item">
         <view class="address_sign" >回收地址</view>
+        <view class="address_content3">
+            {{position}}
+        </view>
         <view class="address_content">
             <input/>
         </view>
     </view>
     <view class="address_item">
         <view class="address_sign" >详细地址</view>
-        <view class="address_content">
-            <input/>
+        <view class="address_content" >
+            <input placeholder="如1栋单元101"/>
         </view>
     </view>
 
     <view class="address_item2">
-        <view class="address_sign" >设为默认地址</view>
-        <view class="address_content">
+        <view class="address_sign2" >设为默认地址</view>
+        <view class="address_content2">
             <switch checked="true"></switch>
         </view>
     </view>
-   <view> <button class="submit_order">一键回收</button></view>
+    <button class="submit_order" >保存</button>
+   
    
 
 </form>

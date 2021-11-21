@@ -25,35 +25,75 @@
   }
   /* 地址信息提示 */
 .address_sign {
-    flex: 5;
+    flex: 1;
     display: flex;
     /* 在伸缩盒子找那个留空白的位置 */
     justify-content: left;
     /* 纵向排在中间 */
     align-items: center;
   }
+   /* 地址信息提示 */
+.address_sign2 {
+  flex: 5;
+  display: flex;
+  /* 在伸缩盒子找那个留空白的位置 */
+  justify-content: left;
+  /* 纵向排在中间 */
+  align-items: center;
+}
   /* 地址 输入框表单组件 */
 .address_content {
+    flex: 3;
+    display: flex;
+    /* 在伸缩盒子找那个留空白的位置 */
+    justify-content: left;
+    align-items: center;
+    font-size: x-small;
+  }
+    /* 地址 输入框表单组件 */
+  .address_content2 {
     flex: 1;
     display: flex;
     /* 在伸缩盒子找那个留空白的位置 */
-    justify-content: end;
+    justify-content: left;
     align-items: center;
   }
+    /* 地址 输入框表单组件 */
+.address_content3 {
+  flex: 2;
+  display: flex;
+  /* 在伸缩盒子找那个留空白的位置 */
+  justify-content: left;
+  align-items: center;
+  font-size: x-small;
+}
+
   /* 订单提交按钮 */
 .submit_order {
-    overflow: visible;
-    /* position: fixed;
-    bottom: 5rpx;
-    flex: 2;
-    left: 70%;
-    height: 9%;*/
     width: 80%; 
-      /* 设置边框线条粗细 */
-      border:0px solid;
     /* 定义每个角的弧度 */
     border-radius: 55rpx 55rpx 55rpx 55rpx ;
     color: rgb(255, 255, 255);
     background-color: royalblue;
     align-items: center;
   }
+
+    /* 地址选择按钮 */
+.picker_button {
+  font-size: smaller;
+  flex: 1;
+  height: 50rpx;
+  display: flex;
+  /* 设定元素的上下左右 外边距 */
+  margin: 10rpx 10rpx 0 0;
+  /* 居中对齐弹性盒的各项 <div> 元素 */
+  align-items: center;
+  /* 定义每个角的弧度 */
+  border-radius: 20rpx 20rpx 20rpx 20rpx ;
+  color: rgb(4, 0, 255);
+  background-color: rgb(255, 255, 255);
+
+  /* 边框属性 */
+  border-style:solid;
+  border-width:1px;
+}

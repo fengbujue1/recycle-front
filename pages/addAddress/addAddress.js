@@ -5,7 +5,15 @@ Page({
      * 页面的初始数据
      */
     data: {
+        provinces:"",
+        position:""
 
+    },
+
+    selectProvinces(e){
+        this.setData({
+            provinces: e.detail.value
+          })
     },
 
     /**
