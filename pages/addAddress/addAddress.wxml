@@ -9,7 +9,7 @@
     <view class="address_item">
         <view class="address_sign" >手机号</view>
         <view class="address_content">
-            <input  maxlength="11" placeholder="请输入联系人电话" name="tel"/>
+            <input  maxlength="11" placeholder="请输入联系人电话" name="phoneNo"/>
         </view>
     </view>
     <view class="address_item">
@@ -17,7 +17,7 @@
         <view class="address_content3">
             {{provinces}}
         </view>
-        <picker mode="region" bindchange="selectProvinces" value="{{provinces}}">
+        <picker mode="region" bindchange="selectProvinces" >
             <button class="picker_button">
                 选择地区
             </button>
@@ -25,34 +25,38 @@
     </view>
     <view class="address_item">
         <view class="address_sign" >所属街道</view>
-        <view class="address_content">
-            <input/>
-        </view>
-    </view>
-    <view class="address_item">
-        <view class="address_sign" >回收地址</view>
         <view class="address_content3">
+            {{towns[chooseTown].name}}
+        </view>
+        <picker mode="selector" range="{{towns}}" range-key="name" bindchange="selectTown" name="town">
+            <button class="picker_button">
+                选择街道
+            </button>
+        </picker>
+    </view>
+    <!-- <view class="address_item">
+        <view class="address_sign" >回收地址</view>
+        <view class="address_content" >
             {{position}}
         </view>
-        <view class="address_content">
-            <input/>
+        <view>
+            <button class="picker_button" bindtap="getPostion">
+                选择地址
+            </button>
         </view>
-    </view>
+    </view> -->
     <view class="address_item">
         <view class="address_sign" >详细地址</view>
         <view class="address_content" >
-            <input placeholder="如1栋单元101"/>
+            <input style="width: 100%;" placeholder="如泰丰路3号安泰小区1栋单元101" name="detail"/>
         </view>
     </view>
 
     <view class="address_item2">
         <view class="address_sign2" >设为默认地址</view>
         <view class="address_content2">
-            <switch checked="true"></switch>
+            <switch checked="true" name="isDefault"></switch>
         </view>
     </view>
-    <button class="submit_order" >保存</button>
-   
-   
-
+    <button class="submit_order" form-type="submit">保存</button>
 </form>
