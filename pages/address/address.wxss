@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'iconfont';  /* Project id 2935280 */
+  src: url('//at.alicdn.com/t/font_2935280_hcmb858ek0p.woff2?t=1637677173269') format('woff2'),
+       url('//at.alicdn.com/t/font_2935280_hcmb858ek0p.woff?t=1637677173269') format('woff'),
+       url('//at.alicdn.com/t/font_2935280_hcmb858ek0p.ttf?t=1637677173269') format('truetype');
+}
+.iconfont{
+  font-family: 'iconfont';
+  color: rgb(16, 92, 235);
+  font-size: 20px;
+}
+
+.icon-del::before{
+  content: '\ec7b';
+}
+
+.icon-del::before{
+  content: '\ec7b';
+}
+
 .add_new_address {
     position: fixed;
     top: 90.5%;
@@ -7,3 +27,46 @@
     color: rgb(255, 255, 255);
     background-color: royalblue;
   }
+  .address_item {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(19, 228, 228);
+     /* 设置背景颜色 */
+    background-color: rgb(250, 248, 244);
+    /* 设置边框线条粗细 */
+    border:1px solid;
+    /* 设置边框圆角 */
+    border-radius:8px;
+    margin:10px
+  }
+
+  .address_item_left {
+    flex: 58;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .address_item_right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .address_item_inner {
+    /* 文字左右填充 */
+    padding: 10rpx;
+     /* 设置背景颜色 */
+    background-color: rgb(250, 248, 244);
+    margin:10px
+  }
+  .address_item_inner_item {
+    /* 伸缩盒子 */
+    display: flex;
+    /* 文字左右填充 */
+    padding: 10rpx;
+  }
+  

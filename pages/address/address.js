@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        addresses:[]
     },
 
     // 新增收货地址
@@ -18,20 +18,45 @@ Page({
 
     // 查询个人地址信息
     getOrdersByStatus:function(peson_id){
-        var ordersByTyp= [];
         wx.request({
             method:"GET",
             dataType:"json",
             url: 'http://localhost:8080/recycle/address/query',
             data:{"userId":peson_id},
             success: (res) => {
-            console.log(res.data)
+                this.setData({
+                    addresses:res.data
+                })
+                console.log(this.data.addresses)
             },
             fail (res) {
-            console.log(res.data)
+                console.log(res.data)
             }
         })   
     },
+
+    
+    // 删除地址
+    deleteAddress(e){
+        
+        var addressId=e.currentTarget.dataset.addressid
+        console.log(addressId)
+        wx.request({
+            method:"POST",
+            dataType:"application/json",
+            url: 'http://localhost:8080/recycle/address/delete/'+addressId,
+            success: (res) => {
+                this.setData({
+                    addresses:res.data
+                })
+                console.log(this.data)
+            },
+            fail (res) {
+                console.log(res.data)
+            }
+        })
+  
+      },
 
     /**
      * 生命周期函数--监听页面加载
@@ -51,7 +76,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getOrdersByStatus(1)
     },
 
     /**

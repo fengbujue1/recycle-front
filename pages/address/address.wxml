@@ -1,3 +1,36 @@
 <!--pages/address/address.wxml-->
+<view>
+    <view wx:for="{{addresses}}"  wx:for-item="itm" wx:for-index="idx" class="address_item"> 
+        <view class="address_item_left">
+            <view class="address_item_inner">
+                <view class="address_item_inner_item">
+                    <!-- 复选框 -->
+                    <view class="cart_chk_wrap">
+                        <checkbox-group data-id="{{item.goods_id}}" bindchange="handeItemChange">
+                            <checkbox checked="{{itm.default}}"></checkbox>
+                        </checkbox-group>
+                    </view>
+                    <view >{{itm.name}}</view>
+                    <view >{{itm.phoneNo}}</view>
+                </view>
+                
+                <view class="address_item_inner_item">
+                    <view >{{itm.districtCode}}</view>
+                    <view >{{itm.town}}</view>
+                    <view >{{itm.detail}}</view>
+                </view>
+            </view> 
+        </view>
+
+        <view class="address_item_right" >
+            <view><icon class="iconfont icon-del" bindtap="deleteAddress" data-addressId="{{itm.id}}"></icon></view>
+        </view>
+        
+
+
+    </view>
+    
+</view>
+
 <button class="add_new_address" bindtap="addAddress">新增地址</button>
  

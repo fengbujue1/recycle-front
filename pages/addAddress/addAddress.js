@@ -34,7 +34,10 @@ Page({
 
     // 发往服务器新增地址
     addAddress(e){
-        console.log(e.detail.value)
+        // 新增地址之前要进行表单验证
+        if(!this.checkForm(e)){
+          return
+        }
         wx.request({
             method:"PUT",
             dataType:"json",
@@ -43,12 +46,15 @@ Page({
                 "name":e.detail.value.name,
                 "phoneNo":e.detail.value.phoneNo,
                 "isDefault":e.detail.value.isDefault,
-                "town":this.data.towns[e.detail.value.town].value,
+                "town":this.data.towns[e.detail.value.town].code,
                 "detail":e.detail.value.detail,
                 "userId":this.data.userId,
                 "districtCode":this.data.districtCode,
               },
             success (res) {
+              wx.navigateTo({
+                url: '/pages/address/address',
+              })
               console.log(res.data)
             },
             fail (res) {
@@ -56,6 +62,41 @@ Page({
             }
           })
     },
+
+    // 表单验证
+    checkForm:function(e){
+      console.log(e)
+      var msg="";
+      if(e.detail.value.name==""){
+        msg="请填写姓名";
+      }
+      if(e.detail.value.phoneNo==""){
+        msg="请填写手机号";
+      }
+      if(e.detail.value.town==""){
+        msg="请选择街道";
+      }
+      if(e.detail.value.detail==""){
+        msg="请填写详细地址";
+      }
+      if(this.data.districtCode==""){
+        msg="请选择省市区";
+      }
+
+      if(msg!=""){
+        wx.showToast({
+          title: msg,
+          icon: 'error',
+          duration: 2000//持续的时间
+        })
+        return false
+      }else{
+        return true
+      }
+      
+
+    },
+
 
     // 通过地图获取精确回收地址
     getPostion(e){
