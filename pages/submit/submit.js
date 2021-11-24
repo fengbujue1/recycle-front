@@ -87,7 +87,9 @@ Page({
             }
           ],
           // 预约时间
-          dateMinute: '选择时间'
+          dateMinute: '选择时间',
+          address:"请选择地址 ",
+          addressId:""
     },
      /**
      * 展开收起重量选择
@@ -158,6 +160,15 @@ Page({
             // }
           }else if(key==="note"){
             
+          }else if(key==="address"){
+            if(e.detail.value[key]==="请选择地址  >"){
+              wx.showToast({
+                title: '请选择地址',
+                icon: 'error',
+                duration: 2000//持续的时间
+              })
+              return
+            }
           }else{
             if(e.detail.value[key]===""){
               wx.showToast({

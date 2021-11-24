@@ -139,8 +139,10 @@
         </radio-group>
     </view>
     <view class="submit_item">
-        <view class="reference_price">回收地址</view>
-        <navigator url="/pages/address/address" >请选择地址></navigator>
+        <view style="display: flex; flex: 1;">回收地址</view>
+        <navigator url="/pages/address/address" class="position">
+            <input value="{{address}} >" disabled="true" name="address"/>
+        </navigator>
     </view>
     <view class="mesg_item" >
         <view class="mesg_sign" >留言备注</view>

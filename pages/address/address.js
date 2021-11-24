@@ -27,7 +27,8 @@ Page({
                 this.setData({
                     addresses:res.data
                 })
-                console.log(this.data.addresses)
+                console.log(res.data)
+
             },
             fail (res) {
                 console.log(res.data)
@@ -40,22 +41,50 @@ Page({
     deleteAddress(e){
         
         var addressId=e.currentTarget.dataset.addressid
-        console.log(addressId)
+        var userId=1
         wx.request({
             method:"POST",
+            header:"content-type",
             dataType:"application/json",
-            url: 'http://localhost:8080/recycle/address/delete/'+addressId,
+            url: 'http://localhost:8080/recycle/address/delete/'+addressId+'?userId='+userId,
             success: (res) => {
-                this.setData({
-                    addresses:res.data
-                })
-                console.log(this.data)
+                console.log(res.data)
+                this.onShow()
             },
             fail (res) {
                 console.log(res.data)
             }
         })
   
+      },
+    //   地址选择
+      chooseAddress(e){
+        var addressId2=e.currentTarget.dataset.addressid
+        var addressname=e.currentTarget.dataset.addressname
+        var userId=1
+        wx.request({
+            method:"POST",
+            dataType:"application/json",
+            url: 'http://localhost:8080/recycle/address/update',
+            data:{"id":addressId2,"isDefault":true,"userId":userId},
+            success: (res) => {
+                console.log(res.data)
+            },
+            fail (res) {
+                console.log(res.data)
+            }
+        })
+
+        // 获取上一级页面，给上一级页面的地址数据复制
+        
+        let currentPages=getCurrentPages()
+        let lastPage=currentPages[currentPages.length-2]
+        lastPage.setData({
+            address:addressname,
+            addressId:addressId2
+        })
+        // 跳转回上一级页面
+        wx.navigateBack()
       },
 
     /**

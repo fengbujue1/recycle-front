@@ -72,7 +72,7 @@
 }
 /* 地址信息 */
 .position {
-  flex: 2;
+  flex: 4;
   display: flex;
    /* 在伸缩盒子找那个留空白的位置 */
   justify-content: flex-end;

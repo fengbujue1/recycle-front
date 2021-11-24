@@ -1,7 +1,7 @@
 <!--pages/address/address.wxml-->
 <view>
     <view wx:for="{{addresses}}"  wx:for-item="itm" wx:for-index="idx" class="address_item"> 
-        <view class="address_item_left">
+        <view class="address_item_left" bindtap="chooseAddress" data-addressId="{{itm.id}}" data-addressName="{{itm.detail}}">
             <view class="address_item_inner">
                 <view class="address_item_inner_item">
                     <!-- 复选框 -->
@@ -23,7 +23,7 @@
         </view>
 
         <view class="address_item_right" >
-            <view><icon class="iconfont icon-del" bindtap="deleteAddress" data-addressId="{{itm.id}}"></icon></view>
+            <view><icon class="iconfont icon-del" bindtap="deleteAddress" data-addressId="{{itm.id}}" ></icon></view>
         </view>
         
 

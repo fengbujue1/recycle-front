@@ -52,9 +52,7 @@ Page({
                 "districtCode":this.data.districtCode,
               },
             success (res) {
-              wx.navigateTo({
-                url: '/pages/address/address',
-              })
+              wx.navigateBack()
               console.log(res.data)
             },
             fail (res) {
