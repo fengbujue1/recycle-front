@@ -5,7 +5,7 @@
 </view>
 <view class="info">
     <view class="left_info">回收地址</view>
-    <view class="right_info">地址？</view>
+    <view class="right_info">{{addressStr}}</view>
 </view>
 
 <view class="item_title_out">

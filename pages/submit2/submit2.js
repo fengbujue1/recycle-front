@@ -31,7 +31,7 @@ Page({
                 this.setData({
                     appointedTime:data[i].value
                 })
-            }else if(data[i].name==="addressStr"){
+            }else if(data[i].name==="address"){
                 this.setData({
                     addressStr:data[i].value
                 })

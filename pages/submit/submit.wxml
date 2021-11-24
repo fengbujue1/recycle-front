@@ -141,7 +141,7 @@
     <view class="submit_item">
         <view style="display: flex; flex: 1;">回收地址</view>
         <navigator url="/pages/address/address" class="position">
-            <input value="{{address}} >" disabled="true" name="address"/>
+            <input value="{{address}}" disabled="true" name="address"/> >
         </navigator>
     </view>
     <view class="mesg_item" >
