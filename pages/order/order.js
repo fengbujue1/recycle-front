@@ -32,6 +32,7 @@ Page({
 
     // 顶部tab标签，点击出现切换
     handleTabsItemChange(e) {
+      console.log(e)
         // 1 获取被点击的标题索引
         const index  = e.detail.index;
         this.getOrdersByStatus(index+1)
@@ -66,12 +67,13 @@ Page({
     },
  // 指定状态的订单数据
  getOrdersByStatus:function(statusPam){
+   var userId=1
+   var status=statusPam
     var ordersByTyp= [];
     wx.request({
         method:"GET",
         dataType:"json",
-        url: 'http://localhost:8080/recycle/recycle/query?userId=1&status=1',
-        data:{"userId":1,"status":statusPam},
+        url: 'http://localhost:8080/recycle/recycle/query?userId='+userId+'&status='+status,
         success: (res) => {
           //接收订单数据
           const orders=res.data;

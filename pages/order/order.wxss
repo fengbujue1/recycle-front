@@ -1,39 +1,88 @@
-.order_item {
+.order_item_1 {
     /* 伸缩盒子 */
     display: flex;
     /* 文字左右填充 */
     padding: 10rpx;
     /* 设置底部线条 */
-    border-bottom: 1rpx solid rgb(19, 228, 228);
+    border-bottom: 0rpx solid rgb(19, 228, 228);
      /* 设置背景颜色 */
-    background-color: rgb(250, 248, 244);
-    /* 设置边框线条粗细 */
-    border:1px solid;
-    /* 设置边框圆角 */
-    border-radius:8px;
-    margin:10px
+    background-color: rgb(255, 255, 255);
   }
+  .sign_left_1 {
+    font-size: x-small;
+    flex: 5;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+     /* 文字左边填充填充 */
+    padding-left: 15rpx;
+    color: rgb(158, 154, 154);
+  }
+  .sign_right_1 {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: rgb(28, 124, 235);
+  }
+
+  .order_item_2 {
+    /* 文字左右填充 */
+    padding: 10rpx;
+    /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(99, 101, 102);
+     /* 设置背景颜色 */
+    background-color: rgb(255, 255, 255);
+    padding-bottom:15px;
+  }
+  .sign_left_2_1 {
+    flex: 5;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+     /* 文字左边填充填充 */
+    padding-left: 15rpx;
+  }
+  .sign_left_2_2 {
+    font-size: x-small;
+    flex: 5;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+     /* 文字左边填充填充 */
+    padding-left: 15rpx;
+  }
+
+  .order_item_3 {
+    /* 文字左右填充 */
+    padding: 10rpx;
+     /* 设置背景颜色 */
+    background-color: rgb(255, 255, 255);
+    padding-bottom:25px;
+  }
+  .sign_left_3 {
+    font-size: x-small;
+    flex: 5;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+     /* 文字左边填充填充 */
+    padding-left: 15rpx;
+  }
+  
+
 .cart_chk_wrap {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+   
   }
-  .recycle_type {
-    flex: 2;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
+  
   .recycle_remark {
     flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .recycle_time {
-    flex: 4;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
+  

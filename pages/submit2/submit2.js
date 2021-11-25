@@ -35,6 +35,10 @@ Page({
                 this.setData({
                     addressStr:data[i].value
                 })
+            }else if(data[i].name==="addressId"){
+                this.setData({
+                    addressId:data[i].value
+                })
             }else{
                 deatils.push(data[i])
             }
@@ -51,7 +55,7 @@ Page({
     },
 
     submit_order:function(){
-        
+        console.log(this.data.addressId)
         wx.request({
           method:"PUT",
           dataType:"json",
@@ -66,6 +70,9 @@ Page({
             },
           success (res) {
             console.log(res.data)
+            wx.reLaunch({
+                url: '/pages/order/order'
+              })
           },
           fail (res) {
             console.log(res.data)

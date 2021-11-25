@@ -59,6 +59,7 @@ Page({
       },
     //   地址选择
       chooseAddress(e){
+          console.log(e)
         var addressId2=e.currentTarget.dataset.addressid
         var addressname=e.currentTarget.dataset.addressname
         var userId=1

@@ -182,6 +182,8 @@ Page({
           }    
           arr.push({name:key,value:e.detail.value[key]}) 
         }
+        // 记得添加addressId
+        arr.push({name:"addressId",value:this.data.addressId})
         console.log(tag)
         if(!tag){
           wx.showToast({
@@ -269,7 +271,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      console.log(this.data.addressId)
+      console.log(this.data.address)
     },
 
     /**
