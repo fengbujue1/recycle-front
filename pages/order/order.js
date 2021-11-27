@@ -27,7 +27,8 @@ Page({
               isActive: false
             }
           ],
-          ordersByType:[]
+          ordersByType:[],
+          currentStatusIndex:"1",
     },
 
     // 顶部tab标签，点击出现切换
@@ -41,7 +42,8 @@ Page({
         tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
         // 3 赋值到data中
         this.setData({
-          tabs:tabs
+          tabs:tabs,
+          currentStatusIndex:index
         })
       },
     /**
@@ -90,6 +92,32 @@ Page({
         }
       })   
   },
+
+  // 取消订单
+ calcOrder:function(e){
+   var orderId = e.currentTarget.dataset.orderid
+   var userId=1
+   var ordersByTyp= []; 
+   wx.request({
+       method:"DELETE",
+       dataType:"json",
+       url: 'http://localhost:8080/recycle/recycle//delete?orederId='+orderId+"&currentStatusIndex="+this.data.currentStatusIndex+'&userId='+userId,
+       success: (res) => {
+         //接收订单数据
+         const orders=res.data;
+         for (var i=0;i<orders.length;i++){ 
+           ordersByTyp[i]=orders[i];
+         };
+         this.setData({
+           ordersByType:ordersByTyp
+         });
+         console.log(this.data.ordersByType)
+       },
+       fail (res) {
+         console.log(res.data)
+       }
+     })   
+ },
     /**
      * 生命周期函数--监听页面隐藏
      */

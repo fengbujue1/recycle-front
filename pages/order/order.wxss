@@ -1,8 +1,10 @@
+.order_item_0 {
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
 .order_item_1 {
     /* 伸缩盒子 */
     display: flex;
-    /* 文字左右填充 */
-    padding: 10rpx;
     /* 设置底部线条 */
     border-bottom: 0rpx solid rgb(19, 228, 228);
      /* 设置背景颜色 */
@@ -14,9 +16,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-     /* 文字左边填充填充 */
-    padding-left: 15rpx;
     color: rgb(158, 154, 154);
+    padding-bottom: 10rpx;
   }
   .sign_right_1 {
     flex: 1;
@@ -27,8 +28,6 @@
   }
 
   .order_item_2 {
-    /* 文字左右填充 */
-    padding: 10rpx;
     /* 设置底部线条 */
     border-bottom: 1rpx solid rgb(99, 101, 102);
      /* 设置背景颜色 */
@@ -40,8 +39,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-     /* 文字左边填充填充 */
-    padding-left: 15rpx;
+    padding-bottom: 5rpx;
   }
   .sign_left_2_2 {
     font-size: x-small;
@@ -49,40 +47,54 @@
     display: flex;
     justify-content: start;
     align-items: center;
-     /* 文字左边填充填充 */
-    padding-left: 15rpx;
   }
 
   .order_item_3 {
-    /* 文字左右填充 */
-    padding: 10rpx;
+     /* 设置底部线条 */
+    border-bottom: 1rpx solid rgb(99, 101, 102);
      /* 设置背景颜色 */
     background-color: rgb(255, 255, 255);
-    padding-bottom:25px;
+    padding-bottom:15rpx;
+    padding-top: 10rpx;
   }
   .sign_left_3 {
-    font-size: x-small;
     flex: 5;
     display: flex;
     justify-content: start;
     align-items: center;
-     /* 文字左边填充填充 */
-    padding-left: 15rpx;
+    padding-bottom: 10rpx;
   }
   
+  .order_item_4 {
+     /* 伸缩盒子 */
+     display: flex;
+    /* 设置背景颜色 */
+   background-color: rgb(255, 255, 255);
+   padding-top: 15rpx;
+ }
+ .sign_left_4 {
+  flex: 7;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  padding-bottom: 10rpx;
+}
+.sign_right_4 {
+  flex: 3;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  padding-bottom: 10rpx;
+  border:0px solid;
+}
+.sign_button_4 {
+/*  用于设置多行元素的空间量，如多行文本的间距。对于块级元素，它指定元素行盒（line boxes）的最小高度*/
+  line-height:30px;
+  border:0px solid;
+  /* 设置边框圆角 */
+  border-radius:20px;
+   /* 设置边框线条粗细 */
+   border:1px solid;
+}
 
-.cart_chk_wrap {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-  }
-  
-  .recycle_remark {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
