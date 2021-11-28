@@ -31,6 +31,6 @@
     </view>
     
 </view>
-
+<view style="height: 250rpx;"></view>
 <button class="add_new_address" bindtap="addAddress">新增地址</button>
  

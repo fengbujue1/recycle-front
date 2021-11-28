@@ -7,7 +7,8 @@
         "pages/submit/submit",
         "pages/submit2/submit2",
         "pages/address/address",
-        "pages/addAddress/addAddress"
+        "pages/addAddress/addAddress",
+        "pages/introduction/introduction"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -46,4 +47,5 @@
         "request": 3000,
         "downloadFile": 10000
       }
+      
 }

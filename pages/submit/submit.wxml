@@ -152,8 +152,13 @@
     </view>
 
     <view style="height: 500rpx;"></view>
-    <button class="over_view_order" bindtap="over_view_order"></button>
-    <button class="submit_order"  form-type="submit">一键回收</button>
+    <cover-view class="over_view_order">
+        <button  bindtap="over_view_order"></button>
+    </cover-view>
+    <cover-view class="submit_order">
+        <button class="submit_order"  form-type="submit">一键回收</button>
+    </cover-view>
+   
 
 </form>
     

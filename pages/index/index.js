@@ -4,9 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World111',
     home:"",
-    userInfo: {},
+    userInfo: {}, 
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
@@ -28,7 +27,18 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad() {
+  onLoad() { 
+    console.log("12") 
+    wx.getUserProfile({
+      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    })
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true

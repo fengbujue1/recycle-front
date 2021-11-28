@@ -71,6 +71,7 @@
     /* 设置背景颜色 */
    background-color: rgb(255, 255, 255);
    padding-top: 15rpx;
+   padding-bottom: 60rpx;
  }
  .sign_left_4 {
   flex: 7;

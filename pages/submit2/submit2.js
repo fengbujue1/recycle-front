@@ -54,7 +54,19 @@ Page({
 
     },
 
+    // 订单提交
     submit_order:function(){
+        // 下单时间校验
+        var currentTime=Date.parse(new Date());
+        if(currentTime+3600000>Date.parse(this.data.appointedTime)){
+            wx.showToast({
+                title: '预约时间太近',
+                icon: 'error',
+                duration: 2000//持续的时间
+              })
+              return
+        }
+
         console.log(this.data.addressId)
         wx.request({
           method:"PUT",

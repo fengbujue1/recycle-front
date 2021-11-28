@@ -43,7 +43,7 @@ Page({
         // 3 赋值到data中
         this.setData({
           tabs:tabs,
-          currentStatusIndex:index
+          currentStatusIndex:index+1
         })
       },
     /**

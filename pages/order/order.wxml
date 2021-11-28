@@ -6,7 +6,7 @@
         <view wx:for="{{ordersByType}}"  wx:for-item="itm" wx:for-index="idx" class="order_item_0">
             <view class="order_item_1">
                 <view class="sign_left_1">订单号：{{itm.orderId}}</view>
-                <view class="sign_right_1">待接单</view>
+                <view class="sign_right_1" wx:if="{{currentStatusIndex<2}}">待接单</view>
             </view>
             <view wx:for="{{itm.items}}"  wx:for-item="itm2" wx:for-index="idx2" class="order_item_2">
                 <view class="sign_left_2_1">{{itm2.recycleKindStr}}</view>
@@ -19,7 +19,7 @@
             </view>
             <view class="order_item_4">
                 <view class="sign_left_4">合计：￥<view style="color: rgb(18, 86, 233);">{{2.66*4}}</view></view>
-                <view class="sign_right_4">
+                <view class="sign_right_4" wx:if="{{currentStatusIndex<3}}">
                      <button class="sign_button_4" bindtap="calcOrder" data-orderId="{{itm.orderId}}">取消订单</button>
                 </view>
             </view>
