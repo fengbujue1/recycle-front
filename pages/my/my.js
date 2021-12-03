@@ -23,38 +23,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    console.log(app.globalData.userInfo)
-    if (app.globalData.userInfo) {
-      console.log("123")
-      that.setUserInfo(app.globalData.userInfo);
-    } else if (that.data.canIUse) {
-      console.log("456")
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        that.setUserInfo(res.userInfo);
-      }
-    } else {
-      console.log("789")
-      // wx.getUserProfile({
-      //   success: res => {
-      //     console.log(res)
-      //     that.setUserInfo(res.userInfo);
-      //   }
-      // })
-      wx.getUserProfile({
-        desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-        success: (res) => {
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true,
+    // var that = this;
+    // console.log(app.globalData.userInfo)
+    // if (app.globalData.userInfo) {
+    //   console.log("123")
+    //   that.setUserInfo(app.globalData.userInfo);
+    // } else if (that.data.canIUse) {
+    //   console.log("456")
+    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    //   // 所以此处加入 callback 以防止这种情况
+    //   app.userInfoReadyCallback = res => {
+    //     that.setUserInfo(res.userInfo);
+    //   }
+    // } else {
+    //   console.log("789")
+    //   // wx.getUserProfile({
+    //   //   success: res => {
+    //   //     console.log(res)
+    //   //     that.setUserInfo(res.userInfo);
+    //   //   }
+    //   // })
+    //   wx.getUserProfile({
+    //     desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+    //     success: (res) => {
+    //       this.setData({
+    //         userInfo: res.userInfo,
+    //         hasUserInfo: true,
 
-          }),
-          app.globalData.userInfo = res.userInfo
-        }
-      })
-    }
+    //       }),
+    //       app.globalData.userInfo = res.userInfo
+    //     }
+    //   })
+
+    // }
   },
 
   getUserProfile(e) {
@@ -67,6 +68,24 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+      }
+    }),
+
+    wx.login({
+      success (res) {
+        if (res.code) {
+          console.log(res.code)
+          //发起网络请求
+          wx.request({
+            method:"POST",
+            url: 'http://localhost:8080/recycle/login/register',
+            data: {
+              code: res.code
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
       }
     })
   },
