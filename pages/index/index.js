@@ -83,6 +83,14 @@ Page({
             url: 'http://localhost:8080/recycle/login/login?code='+res.code,
             data: {
               code: res.code
+            },
+            success (res1) {
+              var userInfoVo= res1.data
+              if(userInfoVo.token){
+                console.log("token:"+userInfoVo.token)
+                app.globalData.token=userInfoVo.token
+              }
+              console.log(res1.data)
             }
           })
         } else {

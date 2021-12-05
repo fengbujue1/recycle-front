@@ -1,11 +1,13 @@
 // pages/address/address.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        addresses:[]
+        addresses:[],
+        token:""
     },
 
     // 新增收货地址
@@ -17,7 +19,10 @@ Page({
     },
 
     // 查询个人地址信息
-    getOrdersByStatus:function(peson_id){
+    getAddressByStatus:function(peson_id){
+        if(!app.globalData.token){
+            return
+         }
         wx.request({
             method:"GET",
             dataType:"json",
@@ -87,6 +92,12 @@ Page({
         // 跳转回上一级页面
         wx.navigateBack()
       },
+      // 跳转到登录页面（即我的页面）
+    toLogion:function(){
+        wx.reLaunch({
+          url: '/pages/my/my' ,
+        })
+      },
 
     /**
      * 生命周期函数--监听页面加载
@@ -106,7 +117,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.getOrdersByStatus(1)
+        this.getAddressByStatus(1)
+        
+        if(app.globalData.token){
+            this.setData({
+              token:app.globalData.token
+            })
+        }
     },
 
     /**

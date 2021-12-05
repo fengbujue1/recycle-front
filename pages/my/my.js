@@ -58,6 +58,7 @@ Page({
     // }
   },
 
+  // 获取用户头像昵称，传递给后端完成注册，返回token
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
     // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -68,24 +69,34 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
-      }
-    }),
-
-    wx.login({
-      success (res) {
-        if (res.code) {
-          console.log(res.code)
-          //发起网络请求
-          wx.request({
-            method:"POST",
-            url: 'http://localhost:8080/recycle/login/register',
-            data: {
-              code: res.code
+        var usrInfo=res.userInfo
+        wx.login({
+          success (res) {
+            if (res.code) {
+              console.log(res.code)
+              //发起网络请求
+              wx.request({
+                method:"POST",
+                url: 'http://localhost:8080/recycle/login/register',
+                data: {
+                  code: res.code,
+                  nickname:usrInfo.nickName,
+                  img:usrInfo.avatarUrl
+                },
+                success (res1) {
+                  var userInfoVo= res1.data
+                  if(userInfoVo.token){
+                    console.log("token:"+userInfoVo.token)
+                    app.globalData.token=userInfoVo.token
+                  }
+                  console.log(res1.data)
+                }
+              })
+            } else {
+              console.log('登录失败！' + res.errMsg)
             }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
+          }
+        })
       }
     })
   },

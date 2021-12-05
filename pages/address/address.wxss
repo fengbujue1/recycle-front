@@ -69,4 +69,12 @@
     /* 文字左右填充 */
     padding: 10rpx;
   }
+  .logion {
+    width: 30%; 
+    /* 定义每个角的弧度 */
+    border-radius: 55rpx 55rpx 55rpx 55rpx ;
+    color: rgb(255, 255, 255);
+    background-color: royalblue;
+    align-items: center;
+  }
   

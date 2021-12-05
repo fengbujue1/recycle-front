@@ -162,6 +162,7 @@
   color: rgb(255, 255, 255);
   background-color: yellowgreen;
   align-items: center;
+  text-align:center
 }
 /* 订单浏览按钮 */
 .over_view_order {

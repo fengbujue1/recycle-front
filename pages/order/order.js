@@ -1,4 +1,5 @@
 // pages/order/order.js
+const app = getApp()
 Page({
 
     /**
@@ -29,6 +30,7 @@ Page({
           ],
           ordersByType:[],
           currentStatusIndex:"1",
+          token:""
     },
 
     // 顶部tab标签，点击出现切换
@@ -65,10 +67,18 @@ Page({
      */
     onShow: function () {
         this.getOrdersByStatus(1)
+        if(app.globalData.token){
+            this.setData({
+              token:app.globalData.token
+            })
+        }
         
     },
  // 指定状态的订单数据
  getOrdersByStatus:function(statusPam){
+   if(!app.globalData.token){
+      return
+   }
    var userId=1
    var status=statusPam
     var ordersByTyp= [];
@@ -118,6 +128,12 @@ Page({
        }
      })   
  },
+    // 跳转到登录页面（即我的页面）
+    toLogion:function(){
+      wx.reLaunch({
+        url: '/pages/my/my' ,
+      })
+    },
     /**
      * 生命周期函数--监听页面隐藏
      */
@@ -152,4 +168,5 @@ Page({
     onShareAppMessage: function () {
 
     }
+
 })

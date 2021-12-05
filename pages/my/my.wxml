@@ -2,7 +2,7 @@
     <block wx:if="{{!hasUserInfo}}">
       <view class="userinfo">
         <image class="userinfo-avatar" src="../../resources/main/portrait/default_portrait.png" mode="cover"></image>
-        <text class="userinfo-nickname">微信授权</text>
+        <text class="userinfo-nickname">登录/注册</text>
       </view>
       <button class="login-button head-height" bindtap="getUserProfile">  </button>
     </block>

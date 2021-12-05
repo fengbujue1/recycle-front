@@ -1,7 +1,13 @@
 <!--pages/order/order.wxml-->
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"></Tabs>
 <view>
-    <view wx:if="{{ordersByType.length===0}}">暂无数据</view>
+    <view wx:if="{{!token}}">
+        <view style="height: 400rpx;"></view>
+        <view style="text-align:center">登录才能查看订单信息哟~</view>
+        <button class="logion" bindtap="toLogion">立即登录</button>
+
+    </view>
+    <view wx:elif="{{ordersByType.length===0}}">暂无数据</view>
     <view wx:else>
         <view wx:for="{{ordersByType}}"  wx:for-item="itm" wx:for-index="idx" class="order_item_0">
             <view class="order_item_1">

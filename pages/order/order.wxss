@@ -97,5 +97,13 @@
    /* 设置边框线条粗细 */
    border:1px solid;
 }
+.logion {
+  width: 30%; 
+  /* 定义每个角的弧度 */
+  border-radius: 55rpx 55rpx 55rpx 55rpx ;
+  color: rgb(255, 255, 255);
+  background-color: royalblue;
+  align-items: center;
+}
 
   
