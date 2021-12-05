@@ -1,5 +1,5 @@
 <view class='head head-height'>
-    <block wx:if="{{!hasUserInfo}}">
+    <block wx:if="{{!token}}">
       <view class="userinfo">
         <image class="userinfo-avatar" src="../../resources/main/portrait/default_portrait.png" mode="cover"></image>
         <text class="userinfo-nickname">登录/注册</text>
@@ -8,8 +8,8 @@
     </block>
     <block wx:else>
       <view class="userinfo">
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{img}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{nickname}}</text>
       </view>
     </block>
   </view>

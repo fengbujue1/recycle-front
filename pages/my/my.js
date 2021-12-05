@@ -16,7 +16,10 @@ Page({
       // { text: '关于我们', url: 'pages/introduction/introduction', icon: '../../images/icon-index.png', tips: '' }
       { text: '地址管理', url: '/pages/address/address', tips: '' },
       { text: '关于我们', url: '/pages/introduction/introduction', tips: '' }
-    ]
+    ],
+    token:"",
+    img:"",
+    nickname:""
   },
 
   /**
@@ -65,10 +68,10 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+        // this.setData({
+        //   userInfo: res.userInfo,
+        //   hasUserInfo: true
+        // })
         var usrInfo=res.userInfo
         wx.login({
           success (res) {
@@ -86,10 +89,17 @@ Page({
                 success (res1) {
                   var userInfoVo= res1.data
                   if(userInfoVo.token){
-                    console.log("token:"+userInfoVo.token)
+                    console.log("userInfoVo:"+userInfoVo.token)
                     app.globalData.token=userInfoVo.token
+                    app.globalData.img=userInfoVo.img
+                    app.globalData.nickname=userInfoVo.nickname
                   }
                   console.log(res1.data)
+                  // 重新加载界面
+                  wx.reLaunch({
+                    url: '/pages/my/my' ,
+                  })
+                 
                 }
               })
             } else {
@@ -101,13 +111,26 @@ Page({
     })
   },
 
-  setUserInfo: function (userInfo) {
-    if (userInfo != null) {
-      app.globalData.userInfo = userInfo
-      this.setData({
-        userInfo: userInfo,
-        hasUserInfo: true 
-      })
-    }
-  }
+  // setUserInfo: function (userInfo) {
+  //   if (userInfo != null) {
+  //     app.globalData.userInfo = userInfo
+  //     this.setData({
+  //       userInfo: userInfo,
+  //       hasUserInfo: true 
+  //     })
+  //   }
+  // },
+  /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+      if(app.globalData.token){
+          this.setData({
+            token:app.globalData.token,
+            img:app.globalData.img,
+            nickname:app.globalData.nickname
+          })
+      }
+      
+  },
 })
