@@ -79,13 +79,12 @@ Page({
    if(!app.globalData.token){
       return
    }
-   var userId=1
    var status=statusPam
     var ordersByTyp= [];
     wx.request({
         method:"GET",
         dataType:"json",
-        url: 'http://localhost:8080/recycle/recycle/query?userId='+userId+'&status='+status,
+        url: 'http://localhost:8080/recycle/recycle/query?token='+this.data.token+'&status='+status,
         success: (res) => {
           //接收订单数据
           const orders=res.data;

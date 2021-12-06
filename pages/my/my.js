@@ -86,6 +86,7 @@ Page({
                   nickname:usrInfo.nickName,
                   img:usrInfo.avatarUrl
                 },
+                
                 success (res1) {
                   var userInfoVo= res1.data
                   if(userInfoVo.token){

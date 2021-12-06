@@ -84,6 +84,9 @@ Page({
             data: {
               code: res.code
             },
+            header:{
+              'Authorization':"123"
+            } ,
             success (res1) {
               var userInfoVo= res1.data
               if(userInfoVo.token){

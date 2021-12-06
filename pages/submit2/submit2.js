@@ -78,7 +78,7 @@ Page({
               "recycleType":1,
               "remark":this.data.note,
               "timeStr":this.data.appointedTime,
-              "userId":1
+              "token":app.globalData.token
             },
           success (res) {
             console.log(res.data)
