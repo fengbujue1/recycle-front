@@ -27,7 +27,7 @@ Page({
             method:"GET",
             dataType:"json",
             url: 'http://localhost:8080/recycle/address/query',
-            data:{"userId":peson_id},
+            data:{"token":app.globalData.token},
             success: (res) => {
                 this.setData({
                     addresses:res.data
@@ -72,7 +72,7 @@ Page({
             method:"POST",
             dataType:"application/json",
             url: 'http://localhost:8080/recycle/address/update',
-            data:{"id":addressId2,"isDefault":true,"userId":userId},
+            data:{"id":addressId2,"isDefault":true,"token":app.globalData.token},
             success: (res) => {
                 console.log(res.data)
             },

@@ -2,7 +2,7 @@
 <!-- <view class="container" style="background-image: url('../../resources/main/main.png');" >
   
 </view> -->
-<view hig>名字</view>
+<view style="text-align:center">名字</view>
 
 <swiper circular="true" interval="1500" autoplay="true">
     <swiper-item>

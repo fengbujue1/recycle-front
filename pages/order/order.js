@@ -84,7 +84,7 @@ Page({
     wx.request({
         method:"GET",
         dataType:"json",
-        url: 'http://localhost:8080/recycle/recycle/query?token='+this.data.token+'&status='+status,
+        url: 'http://localhost:8080/recycle/recycle/query?token='+app.globalData.token+'&status='+status,
         success: (res) => {
           //接收订单数据
           const orders=res.data;
@@ -105,12 +105,11 @@ Page({
   // 取消订单
  calcOrder:function(e){
    var orderId = e.currentTarget.dataset.orderid
-   var userId=1
    var ordersByTyp= []; 
    wx.request({
        method:"DELETE",
        dataType:"json",
-       url: 'http://localhost:8080/recycle/recycle//delete?orederId='+orderId+"&currentStatusIndex="+this.data.currentStatusIndex+'&userId='+userId,
+       url: 'http://localhost:8080/recycle/recycle//delete?orederId='+orderId+"&currentStatusIndex="+this.data.currentStatusIndex+'&token='+app.globalData.token,
        success: (res) => {
          //接收订单数据
          const orders=res.data;

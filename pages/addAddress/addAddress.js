@@ -1,4 +1,5 @@
 // pages/addAddress/addAddress.js
+const app = getApp()
 Page({
 
     /**
@@ -48,7 +49,7 @@ Page({
                 "isDefault":e.detail.value.isDefault,
                 "town":this.data.towns[e.detail.value.town].code,
                 "detail":e.detail.value.detail,
-                "userId":this.data.userId,
+                "token":app.globalData.token,
                 "districtCode":this.data.districtCode,
               },
             success (res) {
