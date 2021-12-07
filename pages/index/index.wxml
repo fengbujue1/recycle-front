@@ -1,29 +1,29 @@
 <!--index.wxml-->
-<!-- <view class="container" style="background-image: url('../../resources/main/main.png');" >
+<!-- <view class="container" style="background-image: url('{{picRootPath}}/main.png');" >
   
 </view> -->
 <view style="text-align:center">名字</view>
 
 <swiper circular="true" interval="1500" autoplay="true">
     <swiper-item>
-        <image mode="widthFix" src="/resources/main/swiper/swiper1.png"></image>
+        <image mode="widthFix" src="{{picRootPath}}/swiper/swiper1.png"></image>
     </swiper-item>
 
     <swiper-item>
-        <image mode="widthFix" src="/resources/main/swiper/swiper2.png" ></image>
+        <image mode="widthFix" src="{{picRootPath}}/swiper/swiper2.png" ></image>
     </swiper-item>
 
     <swiper-item>
-        <image mode="widthFix" src="/resources/main/swiper/swiper3.png"></image>
+        <image mode="widthFix" src="{{picRootPath}}/swiper/swiper3.png"></image>
     </swiper-item>
     
     <swiper-item>
-        <image mode="widthFix" src="/resources/main/swiper/swiper4.png"></image>
+        <image mode="widthFix" src="{{picRootPath}}/swiper/swiper4.png"></image>
     </swiper-item>
 </swiper>
-<image class="recycel_1" src="../../resources/main/page1.png" bindtap="skip" data-index="0"></image>
-<image class="recycel_2" src="../../resources/main/page2.png" bindtap="skip" data-index="1"></image>
-<image class="recycel_3" src="../../resources/main/page3.png" bindtap="skip" data-index="2"></image>
-<image class="recycel_4" src="../../resources/main/page4.png" bindtap="skip" data-index="3"></image>
-<image class="recycel_5" src="../../resources/main/page5.png" bindtap="skip" data-index="4"></image>
-<image class="recycel_6" src="../../resources/main/page6.png" bindtap="skip" data-index="5"></image>
+<image class="recycel_1" src="{{picRootPath}}/page1.png" bindtap="skip" data-index="0"></image>
+<image class="recycel_2" src="{{picRootPath}}/page2.png" bindtap="skip" data-index="1"></image>
+<image class="recycel_3" src="{{picRootPath}}/page3.png" bindtap="skip" data-index="2"></image>
+<image class="recycel_4" src="{{picRootPath}}/page4.png" bindtap="skip" data-index="3"></image>
+<image class="recycel_5" src="{{picRootPath}}/page5.png" bindtap="skip" data-index="4"></image>
+<image class="recycel_6" src="{{picRootPath}}/page6.png" bindtap="skip" data-index="5"></image>

@@ -71,6 +71,7 @@ Page({
         wx.request({
           method:"PUT",
           dataType:"json",
+          header:{"token":app.globalData.token},
           url: 'http://localhost:8080/recycle/recycle/submit',
           data:{
               "addressId":this.data.addressId,

@@ -9,7 +9,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') ,// 如需尝试获取用户信息可改为false
+    picRootPath:""
   },
   onClick1:function(){
     this.setData({
@@ -70,6 +71,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      picRootPath:app.globalData.picRootPath
+    })
     // 用户自动注册，在小程序首页加载的时候自动调入
     //  * 自动调入：1不存在 nickname 或img  不返回token
     //  * 2.存在 nickname 或img  返回token

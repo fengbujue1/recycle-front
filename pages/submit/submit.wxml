@@ -1,6 +1,6 @@
 <!--pages/submit/submit.wxml-->
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"></Tabs>
-<image class="sign" src="../../resources/main/submit/sub_order.png" ></image>
+<image class="sign" src="{{picRootPath}}/submit/sub_order.png" ></image>
 <view class="submit_item">
     <view class="reference_price">回收参考价格</view>
     <view class="position">地址</view>

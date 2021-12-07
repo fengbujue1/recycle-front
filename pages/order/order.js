@@ -30,7 +30,8 @@ Page({
           ],
           ordersByType:[],
           currentStatusIndex:"1",
-          token:""
+          token:"",
+          
     },
 
     // 顶部tab标签，点击出现切换
@@ -84,6 +85,7 @@ Page({
     wx.request({
         method:"GET",
         dataType:"json",
+        header:{"token":app.globalData.token},
         url: 'http://localhost:8080/recycle/recycle/query?token='+app.globalData.token+'&status='+status,
         success: (res) => {
           //接收订单数据
@@ -109,6 +111,7 @@ Page({
    wx.request({
        method:"DELETE",
        dataType:"json",
+       header:{"token":app.globalData.token},
        url: 'http://localhost:8080/recycle/recycle//delete?orederId='+orderId+"&currentStatusIndex="+this.data.currentStatusIndex+'&token='+app.globalData.token,
        success: (res) => {
          //接收订单数据

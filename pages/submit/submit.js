@@ -1,5 +1,6 @@
 // pages/submit/submit.js
 import WxValidate from '../../utils/WxValidate.js'
+const app = getApp()
 Page({
 
     /**
@@ -89,7 +90,8 @@ Page({
           // 预约时间
           dateMinute: '选择时间',
           address:"请选择地址",
-          addressId:""
+          addressId:"",
+          picRootPath:""
     },
      /**
      * 展开收起重量选择
@@ -256,6 +258,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      this.setData({
+      picRootPath:app.globalData.picRootPath
+    })
       var index = JSON.parse(options.index)
       this.changeTabs(index)
     },

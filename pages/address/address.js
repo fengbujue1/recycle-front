@@ -26,6 +26,7 @@ Page({
         wx.request({
             method:"GET",
             dataType:"json",
+            header:{"token":app.globalData.token},
             url: 'http://localhost:8080/recycle/address/query',
             data:{"token":app.globalData.token},
             success: (res) => {
@@ -51,6 +52,7 @@ Page({
             method:"POST",
             header:"content-type",
             dataType:"application/json",
+            header:{"token":app.globalData.token},
             url: 'http://localhost:8080/recycle/address/delete/'+addressId+'?userId='+userId,
             success: (res) => {
                 console.log(res.data)
@@ -71,6 +73,7 @@ Page({
         wx.request({
             method:"POST",
             dataType:"application/json",
+            header:{"token":app.globalData.token},
             url: 'http://localhost:8080/recycle/address/update',
             data:{"id":addressId2,"isDefault":true,"token":app.globalData.token},
             success: (res) => {
