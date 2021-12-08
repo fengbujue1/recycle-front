@@ -19,6 +19,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({
+            picRootPath:app.globalData.picRootPath
+          })
         var data = JSON.parse(options.data)
         console.log(data)
         var deatils=new Array();
@@ -172,6 +175,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
+        
         console.log("onUnload")
         // 清除缓存数据
         wx.getStorageInfo({

@@ -1,74 +1,86 @@
 <!--pages/submit/submit.wxml-->
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"></Tabs>
-<image class="sign" src="{{picRootPath}}/submit/sub_order.png" ></image>
+<image class="sign" src="{{picRootPath}}/submit/sub_order.png"  ></image>
 <view class="submit_item">
     <view class="reference_price">回收参考价格</view>
     <view class="position">地址</view>
 </view>
 <form bindsubmit="submit_order">
     <!-- 根据当前tab是否活跃，来展示对应条目 -->
-    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="0">
+    <view hidden="{{!tabs[0].isActive}}">
+        <view  class="submit_item" bindtap="on_show_weight" data-index="0">
         <view><icon wx:if="{{icon_jia_jian[0].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块）</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
+            <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块）</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
+                <radio-group  style="padding-left: 25rpx" name="0">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
-    <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx" name="0">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
-    </view>
-
-    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="1">
+    
+    <view hidden="{{!tabs[0].isActive}}">
+        <view class="submit_item" bindtap="on_show_weight" data-index="1">
         <view><icon wx:if="{{icon_jia_jian[1].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">纯黄纸（如空调箱，快递箱等）</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
+            <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">纯黄纸（如空调箱，快递箱等）</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
+                <radio-group  style="padding-left: 25rpx"  name="1">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
-    <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx"  name="1">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
+    
+    <view hidden="{{!tabs[0].isActive}}">
+        <view class="submit_item" bindtap="on_show_weight" data-index="2">
+        <view><icon wx:if="{{icon_jia_jian[2].isPlusActive}}" class="iconfont icon-jia "></icon>
+            <icon wx:if="{{icon_jia_jian[2].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">纯花纸（如饮料箱等）</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
+                <radio-group  style="padding-left: 25rpx" name="2">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
+    
     </view>
 
-    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="2">
-        <view><icon wx:if="{{icon_jia_jian[2].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[2].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">纯花纸（如饮料箱等）</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
-    </view>
-    <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
-        <radio-group  style="padding-left: 25rpx" name="2">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
-    </view>
-    <view hidden="{{!tabs[0].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="3">
+    <view hidden="{{!tabs[0].isActive}}">
+        <view class="submit_item" bindtap="on_show_weight" data-index="3">
         <view><icon wx:if="{{icon_jia_jian[3].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[3].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">杂纸</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
+            <icon wx:if="{{icon_jia_jian[3].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">杂纸</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
+                <radio-group style="padding-left: 25rpx" name="3">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
-    <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
-        <radio-group style="padding-left: 25rpx" name="3">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
-    </view>
+    
+    
 
     <view hidden="{{!tabs[1].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="4">
         <view><icon wx:if="{{icon_jia_jian[4].isPlusActive}}" class="iconfont icon-jia "></icon>

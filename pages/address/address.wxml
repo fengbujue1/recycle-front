@@ -18,12 +18,12 @@
                                 </checkbox-group>
                             </view>
                             <view >{{itm.name}}</view>
-                            <view >{{itm.phoneNo}}</view>
+                            <view >({{itm.phoneNo}})</view>
                         </view>
                         
                         <view class="address_item_inner_item">
-                            <view >{{itm.districtCode}}</view>
-                            <view >{{itm.town}}</view>
+                            <view >{{itm.districtName}}</view>
+                            <view >{{itm.townName}}</view>
                             <view >{{itm.detail}}</view>
                         </view>
                     </view> 

@@ -17,7 +17,7 @@
         <view class="address_content3">
             {{provinces}}
         </view>
-        <picker mode="region" bindchange="selectProvinces" >
+        <picker mode="multiSelector" bindchange="selectProvinces" range="{{multiArray}}">
             <button class="picker_button">
                 选择地区
             </button>
