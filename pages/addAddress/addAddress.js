@@ -49,7 +49,7 @@ Page({
             method:"PUT",
             dataType:"json",
             header:{"token":app.globalData.token},
-            url: 'http://localhost:8080/recycle/address/add',
+            url: app.globalData.apiRootPath+'/address/add',
             data:{
                 "name":e.detail.value.name,
                 "phoneNo":e.detail.value.phoneNo,

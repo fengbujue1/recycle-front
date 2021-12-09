@@ -84,7 +84,7 @@ Page({
           //发起网络请求
           wx.request({
             method:"POST",
-            url: 'http://localhost:8080/recycle/login/login?code='+res.code,
+            url: app.globalData.apiRootPath+'/login/login?code='+res.code,
             data: {
               code: res.code
             },

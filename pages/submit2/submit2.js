@@ -75,7 +75,7 @@ Page({
           method:"PUT",
           dataType:"json",
           header:{"token":app.globalData.token},
-          url: 'http://localhost:8080/recycle/recycle/submit',
+          url: app.globalData.apiRootPath+'/recycle/submit',
           data:{
               "addressId":this.data.addressId,
               "items":this.data.order_details,

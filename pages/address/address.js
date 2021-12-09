@@ -27,7 +27,7 @@ Page({
             method:"GET",
             dataType:"json",
             header:{"token":app.globalData.token},
-            url: 'http://localhost:8080/recycle/address/query',
+            url: app.globalData.apiRootPath+'/address/query',
             data:{"token":app.globalData.token},
             success: (res) => {
                 this.setData({
@@ -53,7 +53,7 @@ Page({
             header:"content-type",
             dataType:"application/json",
             header:{"token":app.globalData.token},
-            url: 'http://localhost:8080/recycle/address/delete/'+addressId+'?userId='+userId,
+            url: app.globalData.apiRootPath+'/address/delete/'+addressId+'?userId='+userId,
             success: (res) => {
                 console.log(res.data)
                 this.onShow()
@@ -74,7 +74,7 @@ Page({
             method:"POST",
             dataType:"application/json",
             header:{"token":app.globalData.token},
-            url: 'http://localhost:8080/recycle/address/update',
+            url: app.globalData.apiRootPath+'/address/update',
             data:{"id":addressId2,"isDefault":true,"token":app.globalData.token},
             success: (res) => {
                 console.log(res.data)

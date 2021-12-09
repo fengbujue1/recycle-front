@@ -36,6 +36,7 @@ App({
     token:"",
     img:"",
     nickname:"",
-    picRootPath:"http://localhost:8080/recycle/static"
+    picRootPath:"https://localhost:8081/recycle/static",
+    apiRootPath:"https://localhost:8081/recycle"
   }
 })
