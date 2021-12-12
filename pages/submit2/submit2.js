@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        order_details:[],
+        order_details:"",
         note:"",
         appointedTime:"",
         addressStr:"",
@@ -23,7 +23,7 @@ Page({
             picRootPath:app.globalData.picRootPath
           })
         var data = JSON.parse(options.data)
-        console.log(data)
+        console.log("data:"+options.data)
         var deatils=new Array();
         for(var i=0;i<data.length;i++){
             if(data[i].name==="note"){
@@ -43,7 +43,8 @@ Page({
                     addressId:data[i].value
                 })
             }else{
-                deatils.push(data[i])
+                // 将回收类目填充进去，按照后端可接收的格式
+                deatils.push({"recycleKind":data[i].name,"weightRange":data[i].value})
             }
         }
         this.setData({
@@ -54,11 +55,14 @@ Page({
             order_item_name:app.globalData.order_item_name,
             order_item_weight:app.globalData.order_item_weight
         })
-
+        
+        
     },
 
     // 订单提交
     submit_order:function(){
+        console.log( " order_item_weight:"+this.data.order_item_weight[0])
+        console.log( " order_details:"+this.data.order_details[0].name+"   "+ this.data.order_details[0].value)
         // 下单时间校验
         var currentTime=Date.parse(new Date());
         if(currentTime+3600000>Date.parse(this.data.appointedTime)){

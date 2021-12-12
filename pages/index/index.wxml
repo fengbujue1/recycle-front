@@ -22,8 +22,9 @@
     </swiper-item>
 </swiper>
 <image class="recycel_1" src="{{picRootPath}}/page1.png" bindtap="skip" data-index="0"></image>
-<image class="recycel_2" src="{{picRootPath}}/page2.png" bindtap="skip" data-index="1"></image>
-<image class="recycel_3" src="{{picRootPath}}/page3.png" bindtap="skip" data-index="2"></image>
-<image class="recycel_4" src="{{picRootPath}}/page4.png" bindtap="skip" data-index="3"></image>
-<image class="recycel_5" src="{{picRootPath}}/page5.png" bindtap="skip" data-index="4"></image>
-<image class="recycel_6" src="{{picRootPath}}/page6.png" bindtap="skip" data-index="5"></image>
+<image class="recycel_2" src="{{picRootPath}}/page6.png" bindtap="skip" data-index="1"></image>
+<image class="recycel_3" src="{{picRootPath}}/page5.png" bindtap="skip" data-index="2"></image>
+<image class="recycel_4" src="{{picRootPath}}/page2.png" bindtap="skip" data-index="3"></image>
+<image class="recycel_5" src="{{picRootPath}}/page3.png" bindtap="skip" data-index="4"></image>
+<!-- 家政服务暂未实现 -->
+<!-- <image class="recycel_6" src="{{picRootPath}}/page4.png" bindtap="skip" data-index="5"></image> -->

@@ -40,14 +40,7 @@ Page({
         // 1 获取被点击的标题索引
         const index  = e.detail.index;
         this.getOrdersByStatus(index+1)
-        // 2 修改源数组
-        let  tabs  = this.data.tabs;
-        tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
-        // 3 赋值到data中
-        this.setData({
-          tabs:tabs,
-          currentStatusIndex:index+1
-        })
+       
       },
     /**
      * 生命周期函数--监听页面加载
@@ -97,6 +90,17 @@ Page({
             ordersByType:ordersByTyp
           });
           console.log(this.data.ordersByType)
+          // 请求返回后再渲染订单页面，切换tab，不然在页面展示上会有错位感
+           // 2 修改源数组
+          //  index代表索引，因为状态是从1开始计数，所以索引对应-1
+           var index=status-1;
+          let  tabs  = this.data.tabs;
+          tabs.forEach((v, i) => i === index ? v.isActive = true : v.isActive = false);
+          // 3 赋值到data中
+          this.setData({
+          tabs:tabs,
+          currentStatusIndex:status
+        })
         },
         fail (res) {
           console.log(res.data)

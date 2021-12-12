@@ -15,7 +15,7 @@
             <view class="text_price_wrap">{{}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
-                <radio-group  style="padding-left: 25rpx" name="0">
+                <radio-group  style="padding-left: 25rpx" name="1">
                     <!-- 重量档位-->
                     <radio value="1">0~25公斤</radio>
                     <radio value="2">25~50公斤</radio>
@@ -26,6 +26,7 @@
     </view>
     
     <view hidden="{{!tabs[0].isActive}}">
+    <!-- 此处的data-index只是用来 展开重量选择 时候使用的 -->
         <view class="submit_item" bindtap="on_show_weight" data-index="1">
         <view><icon wx:if="{{icon_jia_jian[1].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
@@ -33,7 +34,7 @@
             <view class="text_price_wrap">{{}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
-                <radio-group  style="padding-left: 25rpx"  name="1">
+                <radio-group  style="padding-left: 25rpx"  name="2">
                     <!-- 重量档位-->
                     <radio value="1">0~25公斤</radio>
                     <radio value="2">25~50公斤</radio>
@@ -51,7 +52,7 @@
             <view class="text_price_wrap">{{}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
-                <radio-group  style="padding-left: 25rpx" name="2">
+                <radio-group  style="padding-left: 25rpx" name="3">
                     <!-- 重量档位-->
                     <radio value="1">0~25公斤</radio>
                     <radio value="2">25~50公斤</radio>
@@ -70,7 +71,7 @@
             <view class="text_price_wrap">{{}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
-                <radio-group style="padding-left: 25rpx" name="3">
+                <radio-group style="padding-left: 25rpx" name="4">
                     <!-- 重量档位-->
                     <radio value="1">0~25公斤</radio>
                     <radio value="2">25~50公斤</radio>
@@ -80,60 +81,65 @@
             </view>
     </view>
     
-    
-
-    <view hidden="{{!tabs[1].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="4">
+    <view hidden="{{!tabs[1].isActive}}">
+        <view  class="submit_item" bindtap="on_show_weight" data-index="4">
         <view><icon wx:if="{{icon_jia_jian[4].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[4].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">塑料瓶</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
-    </view>
-    <view wx:if="{{!icon_jia_jian[4].isPlusActive}}">
-        <radio-group style="padding-left: 25rpx" name="4">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
+            <icon wx:if="{{icon_jia_jian[4].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">塑料瓶</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[4].isPlusActive}}">
+                <radio-group style="padding-left: 25rpx" name="5">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
 
-    <view hidden="{{!tabs[1].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="5">
+    <view hidden="{{!tabs[1].isActive}}">
+        <view class="submit_item" bindtap="on_show_weight" data-index="5">
         <view><icon wx:if="{{icon_jia_jian[5].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[5].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">旧电池，旧电瓶</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
-    </view>
-    <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" name="5">
-        <radio-group style="padding-left: 25rpx">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
+            <icon wx:if="{{icon_jia_jian[5].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">旧电池，旧电瓶</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" >
+                <radio-group style="padding-left: 25rpx" name="6">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
 
-    <view hidden="{{!tabs[2].isActive}}" class="submit_item" bindtap="on_show_weight" data-index="6">
+    <view hidden="{{!tabs[2].isActive}}">
+        <view class="submit_item" bindtap="on_show_weight" data-index="6">
         <view><icon wx:if="{{icon_jia_jian[6].isPlusActive}}" class="iconfont icon-jia "></icon>
-    <icon wx:if="{{icon_jia_jian[6].isMinusActive}}" class="iconfont icon-jian"></icon></view>
-    <view class="text_after_jiajian_wrap">废铁</view>
-    <view class="text_price_wrap">{{}}元/公斤</view>
+            <icon wx:if="{{icon_jia_jian[6].isMinusActive}}" class="iconfont icon-jian"></icon></view>
+            <view class="text_after_jiajian_wrap">废铁</view>
+            <view class="text_price_wrap">{{}}元/公斤</view>
+            </view>
+            <view wx:if="{{!icon_jia_jian[6].isPlusActive}}">
+                <radio-group style="padding-left: 25rpx"  name="7">
+                    <!-- 重量档位-->
+                    <radio value="1">0~25公斤</radio>
+                    <radio value="2">25~50公斤</radio>
+                    <radio value="3">50~250公斤</radio>
+                    <radio value="4">250公斤以上</radio>
+                </radio-group>
+            </view>
     </view>
-    <view wx:if="{{!icon_jia_jian[6].isPlusActive}}" name="6">
-        <radio-group style="padding-left: 25rpx">
-            <!-- 重量档位-->
-            <radio value="1">0~25公斤</radio>
-            <radio value="2">25~50公斤</radio>
-            <radio value="3">50~250公斤</radio>
-            <radio value="4">250公斤以上</radio>
-        </radio-group>
-    </view>
+
+    
 
     <view style="background-color: rgb(250, 244, 244)">
         <view style="padding: 20rpx;" class="reminder1">温馨提示：</view>
-        <view class="reminder2">1.卢本伟牛逼</view>
-        <view class="reminder2">2.加油，奥利给</view>
+        <view class="reminder2">实际回收价格以上门为准</view>
     </view>
     <view class="submit_item">
         <view class="reference_price">预约时间</view>
@@ -153,7 +159,7 @@
     <view class="submit_item">
         <view style="display: flex; flex: 1;">回收地址</view>
         <navigator url="/pages/address/address" class="position">
-            <input value="{{address}}" disabled="true" name="address"/> >
+            <input style="text-align:right" value="{{address}}" disabled="true" name="address"/> >
         </navigator>
     </view>
     <view class="mesg_item" >

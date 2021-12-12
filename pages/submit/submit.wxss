@@ -64,7 +64,7 @@
 }
 /* 最近参考价格 */
 .reference_price {
-  flex: 1;
+  flex: 3;
   display: flex;
   /* 在伸缩盒子找那个留空白的位置 */
   justify-content: left;
@@ -77,6 +77,7 @@
    /* 在伸缩盒子找那个留空白的位置 */
   justify-content: flex-end;
   align-items: center;
+  
 }
 /* 可提交的条目 */
 .submit_item {
