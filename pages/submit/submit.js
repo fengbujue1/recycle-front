@@ -91,7 +91,8 @@ Page({
           dateMinute: '选择时间',
           address:"请选择地址",
           addressId:"",
-          picRootPath:""
+          picRootPath:"",
+          referencePrice:[1,2,3,1,2,3,1,2]
     },
      /**
      * 展开收起重量选择

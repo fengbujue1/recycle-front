@@ -13,7 +13,7 @@
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#0094ff",
-        "navigationBarTitleText": "回收",
+        "navigationBarTitleText": "叮咚回收",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh":true 
     },

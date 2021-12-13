@@ -15,12 +15,12 @@
 
 <view wx:for="{{order_details}}"  wx:for-item="itm" wx:for-index="idx" class="items">
     <image mode="widthFix" src="{{picRootPath}}/page1.png" class="paper_type"></image> 
-    <view> 
+    <view>  
         <view class="items_info_specific">{{order_item_name[itm.recycleKind-1]}}</view>
         <view class="items_info_specific">参考单价：0元/公斤</view>
         <view class="items_info_specific">预估重量：{{order_item_weight[itm.weightRange-1]}}</view>
     </view>
 </view>
 
-<button class="over_view_order" bindtap="over_view_order"></button>
-<button class="submit_order"  bindtap="submit_order">一键回收</button>
+<!-- <button class="over_view_order" bindtap="over_view_order"></button> -->
+<button class="submit_order"  bindtap="submit_order">提交订单</button>

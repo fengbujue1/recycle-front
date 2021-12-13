@@ -2,7 +2,6 @@
 <!-- <view class="container" style="background-image: url('{{picRootPath}}/main.png');" >
   
 </view> -->
-<view style="text-align:center">名字</view>
 
 <swiper circular="true" interval="1500" autoplay="true">
     <swiper-item>

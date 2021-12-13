@@ -108,19 +108,21 @@
 /* 订单提交按钮 */
 .submit_order {
   overflow: hidden;
-  display: flex;
   position: fixed;
   bottom: 5rpx;
   flex: 2;
-  left: 70%;
+  left: 0%;
   height: 9%;
-  width: 30%;
+  width: 100%;
+  vertical-align:middle;
   /* 定义每个角的弧度 */
-  border-radius: 0 35rpx 35rpx 0 ;
+  border-radius: 35rpx 35rpx 35rpx 35rpx ;
   color: rgb(255, 255, 255);
   background-color: yellowgreen;
-  align-items: center;
+  font-size:larger;
+  text-align:center
 }
+
 /* 订单浏览按钮 */
 .over_view_order {
   overflow: hidden;

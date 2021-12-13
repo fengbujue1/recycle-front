@@ -3,7 +3,7 @@
 <image class="sign" src="{{picRootPath}}/submit/sub_order.png"  ></image>
 <view class="submit_item">
     <view class="reference_price">回收参考价格</view>
-    <view class="position">地址</view>
+    <!-- <view class="position">地址</view> -->
 </view>
 <form bindsubmit="submit_order">
     <!-- 根据当前tab是否活跃，来展示对应条目 -->
@@ -12,7 +12,7 @@
         <view><icon wx:if="{{icon_jia_jian[0].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[0].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">统纸（纯黄纸，纯花纸混合一块）</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[0]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[0].isPlusActive}}">
                 <radio-group  style="padding-left: 25rpx" name="1">
@@ -31,7 +31,7 @@
         <view><icon wx:if="{{icon_jia_jian[1].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[1].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">纯黄纸（如空调箱，快递箱等）</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[1]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[1].isPlusActive}}">
                 <radio-group  style="padding-left: 25rpx"  name="2">
@@ -49,7 +49,7 @@
         <view><icon wx:if="{{icon_jia_jian[2].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[2].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">纯花纸（如饮料箱等）</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[2]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[2].isPlusActive}}">
                 <radio-group  style="padding-left: 25rpx" name="3">
@@ -68,7 +68,7 @@
         <view><icon wx:if="{{icon_jia_jian[3].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[3].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">杂纸</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[3]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[3].isPlusActive}}">
                 <radio-group style="padding-left: 25rpx" name="4">
@@ -86,7 +86,7 @@
         <view><icon wx:if="{{icon_jia_jian[4].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[4].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">塑料瓶</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[4]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[4].isPlusActive}}">
                 <radio-group style="padding-left: 25rpx" name="5">
@@ -104,7 +104,7 @@
         <view><icon wx:if="{{icon_jia_jian[5].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[5].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">旧电池，旧电瓶</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[5]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[5].isPlusActive}}" >
                 <radio-group style="padding-left: 25rpx" name="6">
@@ -122,7 +122,7 @@
         <view><icon wx:if="{{icon_jia_jian[6].isPlusActive}}" class="iconfont icon-jia "></icon>
             <icon wx:if="{{icon_jia_jian[6].isMinusActive}}" class="iconfont icon-jian"></icon></view>
             <view class="text_after_jiajian_wrap">废铁</view>
-            <view class="text_price_wrap">{{}}元/公斤</view>
+            <view class="text_price_wrap">{{referencePrice[6]}}元/公斤</view>
             </view>
             <view wx:if="{{!icon_jia_jian[6].isPlusActive}}">
                 <radio-group style="padding-left: 25rpx"  name="7">
@@ -170,9 +170,9 @@
     </view>
 
     <view style="height: 500rpx;"></view>
-    <cover-view class="over_view_order">
+    <!-- <cover-view class="over_view_order">
         <button  bindtap="over_view_order"></button>
-    </cover-view>
+    </cover-view> -->
     <cover-view class="submit_order">
         <button class="submit_order"  form-type="submit">一键回收</button>
     </cover-view>

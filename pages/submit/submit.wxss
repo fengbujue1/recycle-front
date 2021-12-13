@@ -155,16 +155,26 @@
   position: fixed;
   bottom: 5rpx;
   flex: 2;
-  left: 70%;
+  left: 0%;
   height: 9%;
-  width: 30%;
+  width: 100%;
   /* 定义每个角的弧度 */
-  border-radius: 0 35rpx 35rpx 0 ;
+  border-radius: 35rpx 35rpx 35rpx 35rpx ;
   color: rgb(255, 255, 255);
   background-color: yellowgreen;
   align-items: center;
   text-align:center
 }
+.wx-button-cover-view-wrapper{
+  text-align:center;
+  width: 100%
+}
+
+.wx-button-cover-view-inner{
+  width: 100%;
+  text-align:center
+}
+
 /* 订单浏览按钮 */
 .over_view_order {
   z-index:999;

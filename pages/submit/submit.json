@@ -5,6 +5,6 @@
   },
   "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#0055ff",
-  "navigationBarTitleText": "回收下单",
+  "navigationBarTitleText": "回收预约",
   "enablePullDownRefresh": false
 }
